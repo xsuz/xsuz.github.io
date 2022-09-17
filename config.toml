@@ -1,0 +1,42 @@
+baseURL = 'https://xsuz.github.io'
+languageCode = 'en-us'
+title = "xsuz's blog"
+theme='mainroad'
+paginate=10
+
+[Author]
+name="Yuta Suzuki"
+bio="Tokyo Tech B1"
+avatar="img/avatar.jpg"
+
+[Params]
+schema=true
+opengraph=true
+toc=true
+readmore=true
+pager=true
+post_meta=["author", "date", "categories"]
+mainSections=["post"]
+mathjax=true
+mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
+mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
+authorbox=true
+
+[Params.style.vars]
+highlightColor="#09D"
+
+[Params.thumbnail]
+visibility=["list","post","recent"]
+
+[Params.sidebar]
+home="right"
+list="left"
+single="right"
+widgets=["recent","categories","taglist","social"]
+
+[Params.widgets.social]
+github="xsuz"
+twitter="xsuz10074"
+
+[Params.widgets]
+recent_num=5
