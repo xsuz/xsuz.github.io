@@ -9,6 +9,11 @@ name="Yuta Suzuki"
 bio="Tokyo Tech B1"
 avatar="img/avatar.jpg"
 
+[taxonomies]
+tag = "tags"
+category = "categories"
+archive = "archives"
+
 [Params]
 schema=true
 opengraph=true
@@ -29,9 +34,9 @@ visibility=["list","post","recent"]
 
 [Params.sidebar]
 home="right"
-list="left"
+list="right"
 single="right"
-widgets=["recent","categories","taglist","social"]
+widgets=["recent","categories","archives","social"]
 
 [Params.widgets.social]
 github="xsuz"
