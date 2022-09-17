@@ -23,7 +23,6 @@ mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
 authorbox=true
 
 [Params.style.vars]
-highlightColor="#09D"
 
 [Params.thumbnail]
 visibility=["list","post","recent"]
