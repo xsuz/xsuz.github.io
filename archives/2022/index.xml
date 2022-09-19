@@ -1,3 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2022 on xsuz's blog</title><link>https://xsuz.github.io/archives/2022/</link><description>Recent content in 2022 on xsuz's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 17 Sep 2022 21:39:09 +0900</lastBuildDate><atom:link href="https://xsuz.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml"/><item><title>はじめまして</title><link>https://xsuz.github.io/post/intro/</link><pubDate>Sat, 17 Sep 2022 21:39:09 +0900</pubDate><guid>https://xsuz.github.io/post/intro/</guid><description>はじめまして、xsuzです。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2022 on xsuz's blog</title><link>https://xsuz.github.io/archives/2022/</link><description>Recent content in 2022 on xsuz's blog</description><generator>Hugo -- gohugo.io</generator><language>ja-JP</language><lastBuildDate>Mon, 19 Sep 2022 09:06:27 +0900</lastBuildDate><atom:link href="https://xsuz.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml"/><item><title>Xfoilをpythonで利用する</title><link>https://xsuz.github.io/post/xfoil-with-python/</link><pubDate>Mon, 19 Sep 2022 09:06:27 +0900</pubDate><guid>https://xsuz.github.io/post/xfoil-with-python/</guid><description>こんにちは、xsuzです！
+初めての投稿ですが、ちょっとマニアックなテーマだったかもしれないです。
+今回は、2次元翼型解析ソフトであるxfoilをpythonから使えるようにする方法について書きます。
+xfoilとは？？ 鳥人間界隈でよく使われるXFLR5に搭載されている2次元翼型の解析プログラムです。
+MITのMark Drela教授がFortranで開発しました。
+xfoilの使い方を簡単に説明すると、
+トップレベルから「OPER」、「GDES」、「MDES」、「QDES」の各々のサブルーチンに移ってコマンドを実行します。
+OPER : 翼型を解析します GDES : 翼型の外形を直接編集します。 MDES : 速度分布から逆問題を解き、翼を設計します。 QDES :大体MDESと同じです。（多分） 使い方が分からなくなったら、?&amp;lt;CR&amp;gt;でヘルプを見れます。（英語で辛いけど…）
+詳しくはここに書いてあります。
+https://web.mit.edu/drela/Public/web/xfoil/xfoil_doc.txt
+ただ、翼型解析ソフトとして最強のこのXFOILですが、CUIでとっつきにくいです。
+そこで、C++で再実装して３次元翼の解析などの機能を加えたものがXFLR5です。
+FortranはPythonで扱いにくいので、今回はXFLR5のソースコードを使うことにします。
+今回作ったもの 僕が書いたコードはGitHubにあげておきました。（これ重要）
+以下の手順が面倒なら、これをダウンロードして使うのが楽です。
+コードは ここ です！
+というか、何も問題がなかったらこれ使いましょう！！
+xfoilをpythonで利用するための流れ 以下の手順で、xfoilをpythonで使えるようにしました。
+pybind11のリポジトリをダウンロードする xflr5のソースコードをダウンロード xflr5のコードを一部書き換える xfoilのwrapper(c++)を書く xfoilのwrapper(python)を書く pipでインストール では、それぞれ説明していきます。
+１．pybind11のリポジトリをダウンロードする pybind11 はC++で書かれたコードをPythonから簡単に使えるようにしたものです。
+今回はここを参考にしたいと思います。 これはpython標準のビルドツールでC++のコードを使えるようにした例です。
+はじめに、https://github.com/pybind/python_exampleをダウンロードしてください。
+次にこれを展開します。こんな構成になってると思います。
+├─.github │ └─workflows ├─conda.recipe ├─docs ├─src └─tests .githubとtestsというディレクトリは消して問題ないです。 （これはCIのためのものです。）
+２．xflr5のソースコードをダウンロード xflr5のソースコードはここからダウンロードできます。
+Download snapshotをクリックすることで、表示されているファイル群をダウンロードできます。
+今回使うのはXFoil-libとxflr5v6/xdirect/analysisだけで十分です。
+まあ、僕は全部ダウンロードしましたが。
+３．xflr5のコードを一部書き換える xfoilの核の部分はXFoil-lib/xfoil.cpp、XFoil-lib/xfoil.h、XFoil-lib/xfoil_params.cppに書かれています。
+これらをうまく編集して、標準ライブラリだけでxfoilが動作するようにします。
+あ、、今まで嘘ついてました。
+今回の内容でできるのは、xfoilのOPERをPythonで使えるようにすることです。
+GDESとかは、まだやってないです。</description></item><item><title>はじめまして</title><link>https://xsuz.github.io/post/intro/</link><pubDate>Sat, 17 Sep 2022 21:39:09 +0900</pubDate><guid>https://xsuz.github.io/post/intro/</guid><description>はじめまして、xsuzです。
 Meisterで人力飛行機を作っているので、しばらくは航空工学の記事を載せようと思ってます。
 これからよろしくお願いします！</description></item></channel></rss>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>xsuz's blog</title><link>https://xsuz.github.io/</link><description>Recent content on xsuz's blog</description><generator>Hugo -- gohugo.io</generator><language>ja-JP</language><lastBuildDate>Sat, 17 Sep 2022 21:04:22 +0900</lastBuildDate><atom:link href="https://xsuz.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Xfoilをpythonで利用する</title><link>https://xsuz.github.io/post/xfoil-with-python/</link><pubDate>Mon, 19 Sep 2022 09:06:27 +0900</pubDate><guid>https://xsuz.github.io/post/xfoil-with-python/</guid><description>こんにちは、xsuzです！
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>xfoil on xsuz's blog</title><link>https://xsuz.github.io/tags/xfoil/</link><description>Recent content in xfoil on xsuz's blog</description><generator>Hugo -- gohugo.io</generator><language>ja-JP</language><lastBuildDate>Mon, 19 Sep 2022 09:06:27 +0900</lastBuildDate><atom:link href="https://xsuz.github.io/tags/xfoil/index.xml" rel="self" type="application/rss+xml"/><item><title>Xfoilをpythonで利用する</title><link>https://xsuz.github.io/post/xfoil-with-python/</link><pubDate>Mon, 19 Sep 2022 09:06:27 +0900</pubDate><guid>https://xsuz.github.io/post/xfoil-with-python/</guid><description>こんにちは、xsuzです！
 初めての投稿ですが、ちょっとマニアックなテーマだったかもしれないです。
 今回は、2次元翼型解析ソフトであるxfoilをpythonから使えるようにする方法について書きます。
 xfoilとは？？ 鳥人間界隈でよく使われるXFLR5に搭載されている2次元翼型の解析プログラムです。
@@ -30,6 +30,4 @@ Download snapshotをクリックすることで、表示されているファイ
 これらをうまく編集して、標準ライブラリだけでxfoilが動作するようにします。
 あ、、今まで嘘ついてました。
 今回の内容でできるのは、xfoilのOPERをPythonで使えるようにすることです。
-GDESとかは、まだやってないです。</description></item><item><title>はじめまして</title><link>https://xsuz.github.io/post/intro/</link><pubDate>Sat, 17 Sep 2022 21:39:09 +0900</pubDate><guid>https://xsuz.github.io/post/intro/</guid><description>はじめまして、xsuzです。
-Meisterで人力飛行機を作っているので、しばらくは航空工学の記事を載せようと思ってます。
-これからよろしくお願いします！</description></item></channel></rss>
+GDESとかは、まだやってないです。</description></item></channel></rss>
