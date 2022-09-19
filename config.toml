@@ -1,5 +1,5 @@
 baseURL = 'https://xsuz.github.io'
-languageCode = 'en-us'
+languageCode = 'ja-JP'
 title = "xsuz's blog"
 theme='mainroad'
 paginate=10
@@ -15,12 +15,14 @@ category = "categories"
 archive = "archives"
 
 [Params]
+copyright="Yuta Suzuki"
 schema=true
 opengraph=true
 toc=true
 readmore=true
+twitter_cards=true
 pager=true
-post_meta=["author", "date", "categories"]
+post_meta=["categories", "date"]
 mainSections=["post"]
 mathjax=true
 mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
@@ -28,9 +30,10 @@ mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
 authorbox=true
 
 [Params.style.vars]
+highlightColor="#09D"
 
 [Params.thumbnail]
-visibility=["list","post","recent"]
+visibility=["list","post","recent","categories"]
 
 [Params.sidebar]
 home="right"
