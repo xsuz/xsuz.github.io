@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>xfoil on xsuz's blog</title><link>https://xsuz.github.io/tags/xfoil/</link><description>Recent content in xfoil on xsuz's blog</description><generator>Hugo -- gohugo.io</generator><language>ja-JP</language><lastBuildDate>Mon, 19 Sep 2022 09:06:27 +0900</lastBuildDate><atom:link href="https://xsuz.github.io/tags/xfoil/index.xml" rel="self" type="application/rss+xml"/><item><title>Xfoilをpythonで利用する</title><link>https://xsuz.github.io/post/xfoil-with-python/</link><pubDate>Mon, 19 Sep 2022 09:06:27 +0900</pubDate><guid>https://xsuz.github.io/post/xfoil-with-python/</guid><description>こんにちは、xsuzです！
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>xfoil on xsuz's homepage</title><link>https://xsuz.github.io/tags/xfoil/</link><description>Recent content in xfoil on xsuz's homepage</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 19 Sep 2022 09:06:27 +0900</lastBuildDate><atom:link href="https://xsuz.github.io/tags/xfoil/index.xml" rel="self" type="application/rss+xml"/><item><title>Xfoilをpythonで利用する</title><link>https://xsuz.github.io/post/xfoil-with-python/</link><pubDate>Mon, 19 Sep 2022 09:06:27 +0900</pubDate><guid>https://xsuz.github.io/post/xfoil-with-python/</guid><description>
+こんにちは、xsuzです！
 初めての投稿ですが、ちょっとマニアックなテーマだったかもしれないです。
 今回は、2次元翼型解析ソフトであるxfoilをpythonから使えるようにする方法について書きます。
 xfoilとは？？ 鳥人間界隈でよく使われるXFLR5に搭載されている2次元翼型の解析プログラムです。
@@ -21,7 +22,7 @@ pybind11のリポジトリをダウンロードする xflr5のソースコード
 今回はここを参考にしたいと思います。 これはpython標準のビルドツールでC++のコードを使えるようにした例です。
 はじめに、https://github.com/pybind/python_exampleをダウンロードしてください。
 次にこれを展開します。こんな構成になってると思います。
-├─.github │ └─workflows ├─conda.recipe ├─docs ├─src └─tests .githubとtestsというディレクトリは消して問題ないです。 （これはCIのためのものです。）
+1├─.github 2│ └─workflows 3├─conda.recipe 4├─docs 5├─src 6└─tests .githubとtestsというディレクトリは消して問題ないです。 （これはCIのためのものです。）
 ２．xflr5のソースコードをダウンロード xflr5のソースコードはここからダウンロードできます。
 Download snapshotをクリックすることで、表示されているファイル群をダウンロードできます。
 今回使うのはXFoil-libとxflr5v6/xdirect/analysisだけで十分です。
