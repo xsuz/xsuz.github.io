@@ -3,6 +3,13 @@
 MathJax.Hub.Config({
   tex2jax: {
     inlineMath: [['$','$']]
+  },
+  loader: {
+    load: ['[tex]/color']
   }
 });
 </script>
+<style>
+  /*数式の色を統一する*/
+  .m,.mb,.mf,.mh,.mi,.il,.mo,.mn{color:#FFFFFF}
+</style>

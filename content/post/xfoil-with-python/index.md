@@ -2,7 +2,6 @@
 title: "Xfoilをpythonで利用する"
 date: 2022-09-19T09:06:27+09:00
 archives:
-    - 2022
     - 2022-09
 categories: [xfoil]
 tags:

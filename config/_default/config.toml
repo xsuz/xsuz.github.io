@@ -1,0 +1,15 @@
+baseurl = "https://xsuz.github.io/"  # Include trailing slash
+paginate = 10
+theme = "clarity"
+title="xsuz's homepage"
+
+DefaultContentLanguage = "en"
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+archive = "archives"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
