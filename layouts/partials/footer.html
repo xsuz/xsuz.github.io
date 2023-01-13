@@ -1,15 +1,17 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$']]
-  },
-  loader: {
-    load: ['[tex]/color']
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
   }
-});
+};
 </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+
 <style>
   /*数式の色を統一する*/
   .m,.mb,.mf,.mh,.mi,.il,.mo,.mn{color:#FFFFFF}
+  p {
+    text-indent: 1em;
+  }
 </style>

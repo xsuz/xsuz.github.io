@@ -3,7 +3,7 @@ title: "Xfoilをpythonで利用する"
 date: 2022-09-19T09:06:27+09:00
 archives:
     - 2022-09
-categories: [xfoil]
+categories: [Aerodynamics]
 tags:
     - python
     - xfoil
@@ -15,6 +15,8 @@ draft: false
 初めての投稿ですが、ちょっとマニアックなテーマだったかもしれないです。
 
 今回は、2次元翼型解析ソフトであるxfoilをpythonから使えるようにする方法について書きます。
+
+---
 
 ## xfoilとは？？
 
