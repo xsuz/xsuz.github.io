@@ -397,6 +397,7 @@ C(\theta,v_x,v_y,\omega)
 \end{cases}
 $$
 この連立方程式を解けば、$(x,y,\theta,v_x,v_y,\omega)$から$(\dot x,\dot y,\dot \theta,\dot {v_x},\dot {v_y},\dot {\omega},\lambda)$を計算することができます。つまり、標準型を導くことができるので、Euler法やRunge-Kutta法などで数値的に解くことができます。
+
 ## 5. 参考文献
 
 * 機械システム学のための数値計算法　平井慎一
