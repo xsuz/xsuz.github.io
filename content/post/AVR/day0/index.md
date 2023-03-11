@@ -26,6 +26,19 @@ tags:
 
 ---
 
+# 目次
+
+* 第0回 環境構築　←ここ
+* [第1回](../day1/) Lチカ
+* [第2回](../day2/) 7セグメントLED
+* [第3回](../day3/) ダイナミック点灯
+* [第4回](../day4/) タイマ割り込み
+* [第5回](../day5/) サーミスタとAD変換
+* [第6回](../day6/) UART
+* [第7回](../day7/) I2C
+
+---
+
 ## 1. AVRとは
 
 今回使うマイコンはAVRというものです。Arduino UNOに使われているマイコンもAVRです。
@@ -82,14 +95,46 @@ Arduino IDEを開いてPreferencesを開いてください。以下のような�
 
 
 
-以上で環境構築は終わりです。次回はLチカします。
+以上で環境構築は終わりです。[次回](../day1/)はLチカします。
 
+---
+
+## 4. AVRライターを用意する (おまけ)
+
+AVRマイコンに書き込むためには、AVRライターというものが必要です。ここでは、Arduinoを使ってAVRライターを作ってみます。
+
+### 4.1. ファームウェアを書き込む
+
+まず、Arduino IDEを起動してください。
+
+起動出来たら、以下の画像のように File > Examples > 11 ArduinoISP > ArduinoISP と選んでください。
+
+![](img/fig7.png)
+
+そうすると、ArduinoISPのスケッチが開かれると思います。今度はArduinoを接続し、このスケッチをArduinoに書き込みましょう。Ctrl+Uと押せば書き込まれます。
+
+### 4.2. 配線する
+
+ファームウェアを書き込んだArduinoとターゲット側のICが簡単に接続できるように、配線します。
+
+|ピンの名前|Arduino側|ICSP端子側|
+|-|-|-|
+|GND|GND|4|
+|VCC|5V|6|
+|RST|D10|3|
+|MISO|D11|1|
+|MOSI|D12|5|
+|SCK|D13|2|
 ---
 
 ## （参考）使うマイコンICについて
 
-2023年のMeisterの新歓イベントである作業体験ではATmega88というマイコンICを使います。Arduino UNOに使われているATmega328pの弟分みたいなやつですね。
+2023年のMeisterの作業体験ではATmega88というマイコンICを使います。Arduino UNOに使われているATmega328pの弟分みたいなやつですね。
 
-データシート：https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega48_88_168_megaAVR-Data-Sheet-40002074.pdf
+データシート：[https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega48_88_168_megaAVR-Data-Sheet-40002074.pdf](https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega48_88_168_megaAVR-Data-Sheet-40002074.pdf)
 
 半導体不足の今でも250円程度ととても安いです。
+
+## [追記]
+
+3/8 目次を書き換えました。
