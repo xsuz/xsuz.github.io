@@ -7,7 +7,7 @@ draft: false
 
 ![](/img/avatar.jpg)
 
-東京工業大学 工学院 B1
+東京工業大学 工学院機械系 B2
 
 鳥人間サークルMeister24代全体設計＆電装・操舵班
 
