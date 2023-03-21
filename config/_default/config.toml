@@ -1,5 +1,5 @@
 baseurl = "https://xsuz.github.io/"  # Include trailing slash
-paginate = 10
+paginate = 5
 theme = "clarity"
 title="xsuz's homepage"
 

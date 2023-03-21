@@ -81,7 +81,7 @@ DDRC=0b00001001;
 
 とりあえず、プログラムを書いてみましょう。今回のは以下のようになります。
 
-```c
+```cpp
 #include<avr/io.h>
 #include<util/delay.h>
 

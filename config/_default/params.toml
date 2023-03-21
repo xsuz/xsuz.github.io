@@ -5,7 +5,7 @@ introDescription = "Tokyo Tech 22B"
 # description = "" # Set your site's meta tag (SEO) description here. Alternatively set this description in your home page content file e.g. content/_index.md. Whatever is set in the latter will take precedence.
 # keywords = ["design", "clarity", "hugo theme"] # Set your site's meta tag (SEO) keywords here. Alternatively set these in your home page content file e.g. content/_index.md. Whatever is set in the latter will take precedence.
 
-showShare = false # Uncomment to not show share buttons on each post. Also available in each post's front matter.
+showShare = true # Uncomment to not show share buttons on each post. Also available in each post's front matter.
 
 # directory(s) where your articles are located
 mainSections = ["post"] # see config details here https://gohugo.io/functions/where/#mainsections
