@@ -5,6 +5,7 @@ archives:
     - 2022-09
 categories: [Aerodynamics]
 tags:
+    - Aerodynamics
     - python
     - xfoil
 draft: false

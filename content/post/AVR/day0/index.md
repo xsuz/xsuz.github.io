@@ -7,6 +7,7 @@ draft: false
 categories: [Electronics]
 tags:
     - AVR
+    - C++
 ---
 
 お久しぶりです～。xsuzです。
