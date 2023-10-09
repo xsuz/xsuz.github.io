@@ -1,17 +1,23 @@
 [[main]]
-  name = "home"
+  name = "Home"
   url = ""
   weight = -110
 
 [[main]]
-  name = "archives"
+  name = "Archives"
   url = "archives/"
   weight = -109
 
 [[main]]
-  name = "about"
-  url = "about/"
-  weight = -108
+  name = "Aerodynamics"
+  url = "categories/aerodynamics/"
+  weight = -107
+
+[[main]]
+  name = "Electronics"
+  url = "categories/electronics/"
+  weight = -106
+
 
 # social menu links
 
