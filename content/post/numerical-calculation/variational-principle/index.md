@@ -171,7 +171,7 @@ $$
 を導くことができる。
 オイラー法により、逐一$\theta$、$\dot\theta$を数値計算することができる。
 
-[^proof-d'Alembert's-principle]: **ダランベールの原理と運動量保存則が等価性** \
+[^proof-d'Alembert's-principle]: **ダランベールの原理と運動量保存則の等価性** \
 番号$i$の質点の運動方程式
 $$
 \mathbf F_i(t)-m_i\frac{d^2}{dt}\mathbf r_i(t)=\mathbf 0
