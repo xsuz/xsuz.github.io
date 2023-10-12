@@ -154,7 +154,7 @@ $$
 \begin{bmatrix}\cos\Theta&0&-\sin\Theta \\\ 0&1&0 \\\ \sin\Theta&0&\cos\Theta\end{bmatrix}
 \begin{bmatrix}1&0&0 \\\ 0&\cos\Phi&\sin\Phi \\\ 0&-\sin\Phi&\cos\Phi\end{bmatrix}
 \begin{bmatrix} U \\\ V \\\ W \end{bmatrix}\\\
-&=\left[\begin{matrix}\cos{\left(\Psi \right)} \cos{\left(\Theta \right)} & \sin{\left(\Phi \right)} \sin{\left(\Theta \right)} \cos{\left(\Psi \right)} - \sin{\left(\Psi \right)} \cos{\left(\Phi \right)} & \sin{\left(\Phi \right)} \sin{\left(\Psi \right)} + \sin{\left(\Theta \right)} \cos{\left(\Phi \right)} \cos{\left(\Psi \right)}\\\sin{\left(\Psi \right)} \cos{\left(\Theta \right)} & \sin{\left(\Phi \right)} \sin{\left(\Psi \right)} \sin{\left(\Theta \right)} + \cos{\left(\Phi \right)} \cos{\left(\Psi \right)} & - \sin{\left(\Phi \right)} \cos{\left(\Psi \right)} + \sin{\left(\Psi \right)} \sin{\left(\Theta \right)} \cos{\left(\Phi \right)}\\- \sin{\left(\Theta \right)} & \sin{\left(\Phi \right)} \cos{\left(\Theta \right)} & \cos{\left(\Phi \right)} \cos{\left(\Theta \right)}\end{matrix}\right]\begin{bmatrix} U \\\ V \\\ W \end{bmatrix}
+&=\left[\begin{matrix}\cos{\left(\Psi \right)} \cos{\left(\Theta \right)} & \sin{\left(\Phi \right)} \sin{\left(\Theta \right)} \cos{\left(\Psi \right)} - \sin{\left(\Psi \right)} \cos{\left(\Phi \right)} & \sin{\left(\Phi \right)} \sin{\left(\Psi \right)} + \sin{\left(\Theta \right)} \cos{\left(\Phi \right)} \cos{\left(\Psi \right)}\\\sin{\left(\Psi \right)} \cos{\left(\Theta \right)} & \sin{\left(\Phi \right)} \sin{\left(\Psi \right)} \sin{\left(\Theta \right)} + \cos{\left(\Phi \right)} \cos{\left(\Psi \right)} & - \sin{\left(\Phi \right)} \cos{\left(\Psi \right)} + \sin{\left(\Psi \right)} \sin{\left(\Theta \right)} \cos{\left(\Phi \right)}\\\ - \sin{\left(\Theta \right)} & \sin{\left(\Phi \right)} \cos{\left(\Theta \right)} & \cos{\left(\Phi \right)} \cos{\left(\Theta \right)}\end{matrix}\right]\begin{bmatrix} U \\\ V \\\ W \end{bmatrix}
 \end{aligned}
 $$と表現される。これを**航法方程式**という。
 
@@ -179,16 +179,16 @@ $$が得られる。
 上の式を成分表示すると、
 $$
 \begin{aligned}
-\begin{bmatrix}P\\ Q\\ R\end{bmatrix}&=
-\begin{bmatrix}1&0&0 \\\ 0&\cos\Phi&\sin\Phi \\\ 0&-\sin\Phi&\cos\Phi\end{bmatrix}(\begin{bmatrix}\dot\Phi\\ 0\\ 0\end{bmatrix}+\begin{bmatrix}\cos\Theta&0&-\sin\Theta \\\ 0&1&0 \\\ \sin\Theta&0&\cos\Theta\end{bmatrix}(\begin{bmatrix}0 \\ \dot\Theta\\ 0\end{bmatrix}+\begin{bmatrix}\cos\Psi&\sin\Psi&0 \\\ -\sin\Psi&\cos\Psi&0 \\\ 0&0&1\end{bmatrix}\begin{bmatrix}0\\ 0\\ \dot\Psi\end{bmatrix}))\\\
+\begin{bmatrix}P\\\ Q\\\ R\end{bmatrix}&=
+\begin{bmatrix}1&0&0 \\\ 0&\cos\Phi&\sin\Phi \\\ 0&-\sin\Phi&\cos\Phi\end{bmatrix}(\begin{bmatrix}\dot\Phi\\\ 0\\\ 0\end{bmatrix}+\begin{bmatrix}\cos\Theta&0&-\sin\Theta \\\ 0&1&0 \\\ \sin\Theta&0&\cos\Theta\end{bmatrix}(\begin{bmatrix}0 \\\  \dot\Theta\\\ 0\end{bmatrix}+\begin{bmatrix}\cos\Psi&\sin\Psi&0 \\\ -\sin\Psi&\cos\Psi&0 \\\ 0&0&1\end{bmatrix}\begin{bmatrix}0\\\ 0\\\ \dot\Psi\end{bmatrix}))\\\
 &=\begin{bmatrix}1&0&-\sin\Theta \\\ 0&\cos\Phi&\sin\Phi\cos\Theta \\\ 0&-\sin\Phi&\cos\Phi\cos\Theta\end{bmatrix}
-\begin{bmatrix}\dot\Phi\\\dot\Theta\\\dot\Psi\end{bmatrix}
+\begin{bmatrix}\dot\Phi\\\ \dot\Theta\\\ \dot\Psi\end{bmatrix}
 \end{aligned}
 $$
 よって逆行列をかけてやれば
 $$
 \begin{aligned}
-\begin{bmatrix}\dot\Phi\\\dot\Theta\\\dot\Psi\end{bmatrix}&=
+\begin{bmatrix}\dot\Phi\\\ \dot\Theta\\\ \dot\Psi\end{bmatrix}&=
 \begin{bmatrix}1&0&-\sin\Theta \\\ 0&\cos\Phi&\sin\Phi\cos\Theta \\\ 0&-\sin\Phi&\cos\Phi\cos\Theta\end{bmatrix}^{-1}
 \begin{bmatrix}P\\ Q\\ R\end{bmatrix}\\\
 &=\begin{bmatrix}1&\sin\Phi\tan\Theta&\cos\Phi\tan\Theta \\\ 0&\cos\Phi&-\sin\Phi \\\ 0&\sin\Phi/\cos\Theta&\cos\Phi/\cos\Theta\end{bmatrix}
