@@ -1,17 +1,7 @@
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
-  }
-};
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
-
-<style>
-  /*数式の色を統一する*/
-  .m,.mb,.mf,.mh,.mi,.il,.mo,.mn{color:#FFFFFF}
-  p {
-    text-indent: 1em;
-  }
-</style>
+<footer>
+  {{ partial "foot_custom.html" . }}
+  {{ with .Site.Params.footer }}
+  <hr />
+  {{ replace . "{Year}" now.Year | markdownify}}
+  {{ end }}
+</footer>

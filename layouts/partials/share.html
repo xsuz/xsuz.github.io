@@ -1,0 +1,11 @@
+  {{- $s := "シェアする" }}
+  <div class="bg-outline-primary-subtle">
+    {{ $s }}:
+    <a href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}&tw_p=tweetbutton" class="btn" title="{{ $s }} Twitter" target="_blank" rel="nofollow">
+      <i class="bi bi-twitter" style="font-size: 2rem; color: deepskyblue;"></i>
+    </a>
+    <a href="https://www.facebook.com/sharer.php?u={{ .Permalink }}&t={{ .Title }}" class="btn" title="{{ $s }} Facebook" target="_blank" rel="nofollow">
+      <i class="bi bi-facebook" style="font-size: 2rem; color: cornflowerblue;"></i>
+    </a>
+  </div>
+  

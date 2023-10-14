@@ -1,0 +1,103 @@
+{{- define "main" -}}
+
+{{ $pages := .Pages }}
+{{ if .IsHome }}
+{{ $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ end }}
+
+{{ if eq site.Params.pinFeatured true }}
+{{ $featured := default 8 site.Params.numberOfPinnedPosts }}
+{{ $featuredPosts := first $featured (where $pages "Params.featured" true)}}
+{{ $normalPosts := $pages | symdiff $featuredPosts }}
+{{ $pages = $featuredPosts | append $normalPosts }}
+{{ end }}
+
+<div class="grid-inverse wrap content">
+  <div>
+    {{ if eq (lower .Title) "archives" }}
+    <!--全部の記事を表示-->
+    {{ partial "archives.html" . }}
+    {{ else if eq .Title (.Date.Format "2006") }}
+    <!----月ごと ---->
+    <h3>{{ .Title }}</h3>
+    {{ range $items := .Site.Taxonomies.archives.Alphabetical.Reverse }}
+    {{ if ne (len .Name) 4}}
+    <a href="{{ $.Site.BaseURL }}archives/{{ .Name | urlize | lower }}" class="btn">
+      {{ .Name }} ({{ .Count }})
+    </a>
+    {{ end }}
+    {{ end }}
+
+    {{else if eq .Title (.Date.Format "2006-01") }}
+    <h3>{{ .Date.Format "2006年01月"}}</h3>
+    <ul class="posts" id="posts">
+      {{- range (.Paginate $pages).Pages }}
+      <li>
+        {{ partial "excerpt.html" . }}
+      </li>
+      {{- end }}
+    </ul>
+    {{ else if eq (lower .Title) "tags" }}
+    <!--Tags-->
+    <h3>Tags</h3>
+    {{ range $key, $value:=.Site.Taxonomies.tags }}
+    <ul class="accordion p-1" id="posts">
+      <div class="accordion-item">
+        <h6 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{$key}}"
+            aria-expanded="false" aria-controls="collapse-{{$key}}">
+            {{ $key }} ({{ (len $value) }})
+          </button>
+        </h6>
+        <div id="collapse-{{$key}}" class="accordion-collapse collapse" data-bs-parent="#posts">
+          <div class="accordion-body">
+            <div class="row text-center">
+              {{ range $value}}
+              {{ if ne (len .Name) 4}}
+              {{ partial "excerpt.html" . }}
+              {{ end }}
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </ul>
+    {{- end }}
+    {{ else if eq (lower .Title) "categories" }}
+    <!--Categories-->
+    <h3>Categories</h3>
+    {{ range $key, $value:=.Site.Taxonomies.categories }}
+    <ul class="accordion p-1" id="posts">
+      <div class="accordion-item">
+        <h6 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{$key}}"
+            aria-expanded="false" aria-controls="collapse-{{$key}}">
+            {{ $key }} ({{ (len $value) }})
+          </button>
+        </h6>
+        <div id="collapse-{{$key}}" class="accordion-collapse collapse" data-bs-parent="#posts">
+          <div class="accordion-body">
+            <div class="row text-center">
+              {{ range $value}}
+              {{ if ne (len .Name) 4}}
+              {{ partial "excerpt.html" . }}
+              {{ end }}
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </ul>
+    {{- end }}
+    {{else}}
+    <ul class="posts" id="posts">
+      <h3> {{ .Title }} </h3>
+      {{- range (.Paginate $pages).Pages }}
+      {{ partial "excerpt.html" . }}
+      {{- end }}
+    </ul>
+    {{end}}
+  </div>
+</div>
+
+{{- end -}}

@@ -1,0 +1,19 @@
+<div class=" row container text-center">
+  {{ with .PrevInSection }}
+  <div class="col">
+  <a class="btn btn-outline-primary" href="{{ .RelPermalink }}" aria-label="Previous">
+    {{ .Title }}
+    <h6 aria-hidden="true">&laquo;</h6>
+  </a>
+</div>
+  {{ end }}
+
+  {{ with .NextInSection }}
+  <div class="col">
+  <a class="btn btn-outline-primary" href="{{ .RelPermalink }}" aria-label="Next">
+    {{ .Title }}
+    <h6 aria-hidden="true">&raquo;</h6>
+  </a>
+</div>
+  {{ end }}
+</div>

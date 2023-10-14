@@ -1,0 +1,9 @@
+<div class="row p-3  align-items-center bg-outline-primary-subtle border border-primary-subtle rounded-3">
+    <h6 class="col item-center">tags</h6>
+    <div class="btn-group-sm col" role="group">
+        {{ range .Params.tags }}
+        {{ $href := print (absURL "tags/") (urlize .) }}
+        <a href="{{ $href }}" class="btn btn btn-outline-primary" roll="tab">{{ . }}</a>
+        {{ end }}
+    </div>
+</div>

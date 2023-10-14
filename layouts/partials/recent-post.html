@@ -1,0 +1,11 @@
+{{ $s := site.Params }}
+{{- $posts := where .Site.RegularPages "Type" "in" $s.mainSections }}
+{{- $featured := default 8 $s.numberOfFeaturedPosts }}
+{{- $featuredPosts := first $featured (where $posts "Params.featured" true)}}
+<h2 class="p-3">Recent Posts</h2>
+<ul>
+    {{- $recent := default 5 $s.numberOfRecentPosts }}
+    {{- range first $recent $posts | symdiff $featuredPosts }}
+    {{ partial "excerpt.html" . }}
+    {{- end }}
+</ul>

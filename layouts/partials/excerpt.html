@@ -1,0 +1,22 @@
+<div class="card m-2 bs-$dark">
+  <div class="card-title">
+    <div class="row">
+      <span class="col text-start">
+        {{ .Date.Format "2006-01-02" }}
+      </span>
+      <h6 class="text-center">
+        {{ .Title | markdownify }}
+      </h6>
+    </div>
+  </div>
+  <div class="card-body  text-start">
+    {{- $summary := truncate 160 .Summary }}
+    {{- if .Params.summary }}
+    {{- $summary = .Params.summary }}
+    {{- else if .Params.abstract }}
+    {{ $summary = .Params.abstract }}
+    {{- end }}
+    {{ $summary | markdownify }}
+  </div>
+  <a href="{{ .Permalink }}" class="btn btn-outline-primary">Read More</a>
+</div>

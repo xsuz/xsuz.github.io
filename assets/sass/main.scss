@@ -1,0 +1,16 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+@import "./base.sass";
+@import "./theme.sass";
+
+[data-bs-theme="dark"] {
+    --bs-body-color: var(--bs-white);
+    --bs-body-color-rgb: #{to-rgb($white)};
+    --bs-body-bg: var(--bs-black);
+    --bs-body-bg-rgb: #{to-rgb($black)};
+    --bs-tertiary-bg: #{$gray-100};
+}
