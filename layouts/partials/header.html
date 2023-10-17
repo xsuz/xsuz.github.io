@@ -2,19 +2,16 @@
 <html lang="{{ .Site.LanguageCode }}">
 
 <head>
-  {{ $externals := slice "bootstrap" }}
-  {{ $opts := dict "targetPath" "main.js" "externals" $externals}}
-  {{ $built := resources.Get "js/main.js" | js.Build $opts }}
+	<link rel="shortcut icon" href="{{.Site.BaseURL}}/favicon.png" />
+  {{ $externals := slice "bootstrap" "@propperjs/core" }}
+  {{ $opts := dict "externals" $externals}}
+  {{ $built := resources.Get "js/main.js" | js.Build | minify | fingerprint "sha512"}}
   <script src="{{ $built.RelPermalink }}" defer></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ .Title }} | {{ .Site.Title }}</title>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-    
   {{- $options := (dict "includePaths" (slice "node_modules")) -}}
   {{- $style := resources.Get "sass/main.scss" | resources.ToCSS $options -}}
   <link rel="stylesheet" href="{{ $style.Permalink }}">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 </head>
