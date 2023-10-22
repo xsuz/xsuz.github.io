@@ -26,6 +26,8 @@ Arduino Uno上に搭載されているATmega328pとの比較表は以下の通�
 
 （QFP版ではピン数的にATmega328と置き換えることが可能であるATmega4808の情報も載せました。）
 
+<div style="overflow-x: auto; white-space: nowrap">
+
 |製品名|ATmega328p-PU|ATmega4809-PF|ATmega328p-AU|ATmega4808-AUR|
 |:-:|:-:|:-:|:-:|:-:|
 |コア|megaAVR|megaAVR|megaAVR|megaAVR|
@@ -45,6 +47,8 @@ Arduino Uno上に搭載されているATmega328pとの比較表は以下の通�
 |I2C|1|1|1|1|
 |SPI|1|1|1|1|
 |書き込み方法|ISP|UPDI|ISP|UPDI|
+
+</div>
 
 上の表のようにPWMのピン数が1本少なかったり、EEPROMの容量が少ないことを考えると使い分ける必要がありそうです。
 でも、これだけ性能が高いのに値段が安いのがとてもいいですね！

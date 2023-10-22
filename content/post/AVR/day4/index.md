@@ -69,6 +69,9 @@ ATmega88のクロック周波数は1MHzだから、このままだと128μsし�
 
 ### 18.1. Timer/Counter Control Register
 
+
+<div style="overflow-x: auto; white-space: nowrap">
+
 |TCCR0A|7|6|5|4|3|2|1|0|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |ビット名|COM0A1|COM0A0|COM0B1|COM0B0|-|-|**WGM01**|**WGM00**|
@@ -79,6 +82,8 @@ ATmega88のクロック周波数は1MHzだから、このままだと128μsし�
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |ビット名|FOC0A|FOC0B|-|-|**WGM02**|**CS02**|**CS01**|**CS00**|
 |値|0|0|0|0|0|1|0|1|
+
+</div>
 
 上の二つのレジスタはセットで考えます。
 
@@ -99,10 +104,14 @@ ATmega88のクロック周波数は1MHzだから、このままだと128μsし�
 
 ## 18.2. Timer/Counter Interrupt Mask Register
 
+<div style="overflow-x: auto; white-space: nowrap">
+
 |TIMSK0|7|6|5|4|3|2|1|0|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |ビット名|-|-|-|-|-|**OCIE0B**|**OCIE0A**|**TOIE0**|
 |値|0|0|0|0|0|0|1|0|
+
+</div>
 
 `TIMSK0`は割り込みの種類を選択するレジスタです。
 
