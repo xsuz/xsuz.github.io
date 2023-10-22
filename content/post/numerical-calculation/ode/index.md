@@ -3,6 +3,7 @@ title: "常微分方程式の数値的解法"
 date: 2023-01-07T23:33:39+09:00
 archives:
     - 2023-01
+    - 2023
 draft: false
 categories: [Computer Science]
 tags:

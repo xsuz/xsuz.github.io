@@ -3,6 +3,7 @@ title: "解析力学 1"
 date: 2023-10-10T05:33:19+09:00
 archives:
     - 2023-10
+    - 2023
 categories: [Aerodynamics]
 tags:
     - Physics

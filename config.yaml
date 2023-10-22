@@ -4,7 +4,10 @@ title: "xsuz's blog"
 googleAnalytics: ""
 disqusShortname: ""
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
-footnotereturnlinkcontents: "↩"
+enableEmoji: true
+enableEmojiCDN: true
+enableGitInfo: true
+paginate: 10
 
 taxonomies:
   category : "categories"
@@ -32,7 +35,7 @@ params:
     twitter: "xsuz10074"
     github: "xsuz"
   description: "xsuz's blog"
-  footer: "&copy; [xsuz](https://meister.ne.jp) 2022 -- {Year}"
+  footer: "&copy; [xsuz](https://xsuz.github.io) 2022 -- {Year}"
 
 markup:
   highlight:

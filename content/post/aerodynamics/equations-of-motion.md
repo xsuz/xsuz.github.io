@@ -3,6 +3,7 @@ title: "飛行力学入門-1"
 date: 2023-08-29T10:27:15+09:00
 archives:
     - 2023-08
+    - 2023
 categories: [Aerodynamics]
 tags:
     - Physics

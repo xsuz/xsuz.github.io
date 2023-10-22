@@ -1,19 +1,39 @@
-<div class=" row container text-center">
-  {{ with .PrevInSection }}
-  <div class="col">
-  <a class="btn btn-outline-primary" href="{{ .RelPermalink }}" aria-label="Previous">
-    {{ .Title }}
-    <h6 aria-hidden="true">&laquo;</h6>
-  </a>
-</div>
-  {{ end }}
+{{- $pager := .Paginator }}
+<ul>
+{{range $pager.Pages}}
+{{partial "excerpt.html" .}}
+{{end}}
+</ul>
+{{- if gt $pager.TotalPages 1 }}
+<div class="pagination mt-4">
+    <li class="page-item">
+        {{ if $pager.HasPrev }}
+        <a class="btn btn-outline-primary" href="{{ $pager.Prev.URL }}#pager" aria-label="Previous">
+            &laquo;
+        </a>
+        {{- else }}
+        <a class="page-link disabled" href="" aria-label="Previous">
+            &laquo;
+        </a>
+        {{- end }}
+    </li>
 
-  {{ with .NextInSection }}
-  <div class="col">
-  <a class="btn btn-outline-primary" href="{{ .RelPermalink }}" aria-label="Next">
-    {{ .Title }}
-    <h6 aria-hidden="true">&raquo;</h6>
-  </a>
+    {{- range $pager.Pagers }}
+    <li class="page-item">
+        <a href="{{ .URL }}#pager" class="page-link {{ if eq . $pager }} active{{ end }}">{{ .PageNumber }}</a>
+    </li>
+    {{- end }}
+
+    <li class="page-item">
+        {{ if $pager.HasNext }}
+        <a class="page-link" href="{{ $pager.Next.URL }}#pager" aria-label="Next">
+            &raquo;
+        </a>
+        {{- else -}}
+        <a class="page-link disabled" href="" aria-label="Previous">
+            &raquo;
+        </a>
+        {{- end }}
+    </li>
 </div>
-  {{ end }}
-</div>
+{{- end }}

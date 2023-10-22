@@ -4,7 +4,9 @@
     <div class="btn-group-sm col" role="group">
         {{ range .Params.tags }}
         {{ $href := print (absURL "tags/") (urlize .) }}
-        <a href="{{ $href }}" class="btn btn btn-outline-primary" roll="tab">{{ . }}</a>
+        <a href="{{ $href }}" class="btn btn btn-outline-primary" roll="tab">
+            <div class="bi bi-tag">{{ . }}</div>
+        </a>
         {{ end }}
     </div>
 </div>

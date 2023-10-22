@@ -3,6 +3,7 @@ title: "ATmega4809"
 date: 2022-12-11T14:59:20+09:00
 archives:
     - 2022-12
+    - 2022
 draft: false
 categories: [Electronics]
 tags:

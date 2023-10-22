@@ -3,6 +3,7 @@ title: "AVR入門その４"
 date: 2023-03-21T16:01:44+09:00
 archives:
     - 2023-03
+    - 2023
 draft:  false
 categories: [Electronics]
 tags:
