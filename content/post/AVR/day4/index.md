@@ -8,7 +8,7 @@ draft:  false
 categories: [Electronics]
 tags:
     - AVR
-    - C++
+    - Cpp
 ---
 
 [前回](../day3/)の続きです。今回はタイマ割り込みを使って数字を表示します。。

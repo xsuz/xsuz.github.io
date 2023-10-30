@@ -8,7 +8,7 @@ draft: false
 categories: [Electronics]
 tags:
     - AVR
-    - C++
+    - Cpp
 ---
 
 [前回](../day2/)の続きです。今回は７セグで4桁の数字を表示します。

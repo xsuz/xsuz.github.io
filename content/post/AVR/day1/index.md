@@ -8,7 +8,7 @@ draft: false
 categories: [Electronics]
 tags:
     - AVR
-    - C++
+    - Cpp
 ---
 
 [前回](../day0/)の続きです。今回はLEDをチカチカさせます。
