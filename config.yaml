@@ -6,8 +6,8 @@ disqusShortname: ""
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 enableEmoji: true
 enableEmojiCDN: true
-enableGitInfo: true
-paginate: 10
+pagination:
+  pagerSize: 5
 
 taxonomies:
   category : "categories"
@@ -35,7 +35,7 @@ params:
     twitter: "xsuz10074"
     github: "xsuz"
   description: "xsuz's blog"
-  footer: "&copy; [xsuz](https://xsuz.github.io) 2022 -- {Year}"
+  footer: "&copy; https://xsuz.github.io \ 2022 -- {Year}"
 
 markup:
   highlight:
@@ -46,6 +46,5 @@ markup:
       unsafe: true
 
 
-author:
-  name : "Yuta Suzuki"
-  photo : "img/avatar128x128.jpg" #include this if you would like to show the author photo on the sidebar
+author.name : "Yuta Suzuki"
+author.photo : "img/avatar128x128.jpg" #include this if you would like to show the author photo on the sidebar
