@@ -26,7 +26,7 @@ const tags = Array.from(new Set(all_posts.map(post=>post.rendered.metadata.front
                         const posts = all_posts.filter(post => post.rendered.metadata.frontmatter.tags?.includes(tag));
                         return (
                             <li>
-                                <h3 class="title">{tag}</h3>
+                                <h3 class="title">#{tag}</h3>
                                 <ul class="grid md:grid-cols-1 gap-8">
                                     {posts.map(post => (
                                     	<li>

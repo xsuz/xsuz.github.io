@@ -5,6 +5,8 @@ archives:
     - 2024-11
     - 2024
 tags:
+    - Meister
+    - 鳥人間
 categories: [Meister]
 draft: false
 ---
