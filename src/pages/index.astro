@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import Card from "../components/Card.astro";
 import { SITE_TITLE } from "../consts";
 import { type CollectionEntry, getCollection, render } from "astro:content";
 
@@ -20,99 +21,21 @@ const sortedPosts = (await getCollection("blog"))
 		<Header />
 		<main>
 			<section>
-				<h2>Blog Posts</h2>
-				<ul>
+				<h3>Blog Posts</h3>
+				<div class="grid md:grid-cols-3 gap-8">
 					{
 						sortedPosts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.date} />
-									</p>
-								</a>
-							</li>
+							<Card title={post.data.title} date={post.data.date} id={post.id} />
 						))
 					}
-					<li>
 						<button>
 							<a href="/blog/">
 								<h2 class="title">Read more</h2>
 							</a>
 						</button>
-					</li>
-				</ul>
+					</div>
 			</section>
 		</main>
 		<Footer />
-
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-			}
-			nav {
-				display: flex;
-				justify-content: space-between;
-				margin-top: 4rem;
-			}
-			nav a {
-				color: rgb(var(--gray));
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			.prev {
-				text-align: left;
-			}
-			.next {
-				text-align: right;
-			}
-		</style>
 	</body>
 </html>

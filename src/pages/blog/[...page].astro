@@ -1,21 +1,20 @@
 ---
-import { type CollectionEntry, getCollection, render } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
-import BaseHead from '../../components/BaseHead.astro';
-import Footer from '../../components/Footer.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
-import Header from '../../components/Header.astro';
-import {SITE_TITLE } from '../../consts';
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import Card from "../../components/Card.astro";
+import BaseHead from "../../components/BaseHead.astro";
+import Footer from "../../components/Footer.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Header from "../../components/Header.astro";
+import { SITE_TITLE } from "../../consts";
 
 // getStaticPaths()で動的なルートを設定
 export async function getStaticPaths({ paginate }) {
+	const sortedPosts = (await getCollection("blog")).sort(
+		(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+	);
 
-  const sortedPosts = (await getCollection('blog')).sort(
-  	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-  );
-
-  // 並び替えた投稿の配列から、1ページにX記事づつ入るようにページを生成
-  return paginate(sortedPosts, {});
+	// 並び替えた投稿の配列から、1ページにX記事づつ入るようにページを生成
+	return paginate(sortedPosts, {pageSize:10});
 }
 
 // paginate()関数を使用すると、各ページのデータはpageプロパティとして渡される
@@ -25,115 +24,50 @@ const { page } = Astro.props;
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE}/>
+		<BaseHead title={SITE_TITLE} />
 	</head>
 	<body>
 		<Header />
 		<main>
-			<section>
-				<ul>
-					{
-						page.data.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.date} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
+			<section id="blog" class="py-12 md:py-20 bg-white">
+				<div class="container mx-auto px-6">
+					<div class="grid md:grid-cols-2 gap-8">
+						{
+							page.data.map((post) => (
+								<Card
+									title={post.data.title}
+									date={post.data.date}
+									id={post.id}
+								/>
+							))
+						}
+					</div>
+				</div>
 			</section>
-			
-			<nav>
-				<div class="prev">
-					{page.url.prev ? <a href={page.url.prev} class="prev">prev</a> : null}
+
+			<nav class="flex justify-between mt-16 items-center">
+				<div class="text-left">
+					{
+						page.url.prev ? (
+							<a href={page.url.prev} class="prev">
+								&larr; prev
+							</a>
+						) : null
+					}
 				</div>
 				<span>Page {page.currentPage} of {page.lastPage}</span>
-				<div class="next">
-					{page.url.next ? <a href={page.url.next} class="next">next</a> : null}
+				<div class="text-right">
+					{
+						page.url.next ? (
+							<a href={page.url.next} class="next">
+								next &rarr;
+							</a>
+						) : null
+					}
 				</div>
 			</nav>
-
 		</main>
-		
+
 		<Footer />
-		
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-	nav {
-		display: flex;
-		justify-content: space-between;
-		margin-top: 4rem;
-	}
-	nav a {
-		color: rgb(var(--gray));
-		text-decoration: none;
-		transition: 0.2s ease;
-	}
-	.prev {
-		text-align: left;
-	}
-	.next {
-		text-align: right;
-	}
-		</style>
 	</body>
 </html>

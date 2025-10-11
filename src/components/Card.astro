@@ -1,0 +1,14 @@
+---
+import { CollectionEntry } from 'astro:content';
+import FormattedDate from './FormattedDate.astro';
+import '../styles/global.css';
+
+
+type Props = CollectionEntry<'blog'>;
+const {title, date, id} = Astro.props;
+---
+<div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+    <FormattedDate date={date} />
+    <h4 class="text-xl font-semibold mb-2 text-blue-600">{title}</h4>
+    <a href={`/blog/${id}`} class="text-blue-500 hover:underline right-0">Read more &rarr;</a>
+</div>
