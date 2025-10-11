@@ -72,7 +72,6 @@ $$
 m(\Omega\vec v_c +\dot {\vec v_c})=\vec{U}\sum \mathbf F
 $$
 成分で書き下すと、以下の式を得る。
-<div style="overflow-x: auto; white-space: nowrap">
 
 > $$
 > \begin{bmatrix}\dot U \\\ \dot V \\\ \dot W\end{bmatrix}
@@ -82,8 +81,6 @@ $$
 > $$
 >
 > ($\Omega$は交代行列であることに注意)
-
-</div>
 
 ### 1.1.2. 姿勢運動の方程式
 
@@ -104,8 +101,6 @@ $\vec U^{-1}$を両辺にかけて以下の式を得る。
 
 $\mathbf M=\begin{bmatrix}M&N&L\end{bmatrix}^T$とおけば、
 
-<div style="overflow-x: auto; white-space: nowrap">
-
 > $$
 > \begin{bmatrix}\dot U\\\ \dot V\\\ \dot W\end{bmatrix}
 > =\begin{bmatrix}I_{xx}&-I_{xy}&-I_{xz}\\\ -I_{yx}&I_{yy}&-I_{yz}\\\ -I_{zx}&-I_{zy}&I_{zz}\end{bmatrix}^{-1}
@@ -116,8 +111,6 @@ $\mathbf M=\begin{bmatrix}M&N&L\end{bmatrix}^T$とおけば、
 > +\begin{bmatrix}M \\\ N \\\ L\end{bmatrix}
 > \Big)
 > $$
-
-</div>
 
 ### 1.2. 座標系の種類と座標成分の変換
 
@@ -166,8 +159,6 @@ Euler角で姿勢を表現するときは 座標軸の回転順序が重要で�
 地上固定座標系での速度を$\mathbf v_e$、機体軸系での速度を$\mathbf v_c=\begin{bmatrix} U & V & W \end{bmatrix}^T$
 すると、1.2.1.から地面固定座標系から機体軸系への速度の座標変換は
 
-<div style="overflow-x: auto; white-space: nowrap">
-
 $$
 \begin{aligned}
 \mathbf v_e&=R_{X_3}(\Phi)(R_{Y_3}(\Theta)(R_{Z_3}(\Psi)v_c))\\\
@@ -178,8 +169,6 @@ $$
 &=\left[\begin{matrix}\cos{\left(\Psi \right)} \cos{\left(\Theta \right)} & \sin{\left(\Phi \right)} \sin{\left(\Theta \right)} \cos{\left(\Psi \right)} - \sin{\left(\Psi \right)} \cos{\left(\Phi \right)} & \sin{\left(\Phi \right)} \sin{\left(\Psi \right)} + \sin{\left(\Theta \right)} \cos{\left(\Phi \right)} \cos{\left(\Psi \right)}\\\sin{\left(\Psi \right)} \cos{\left(\Theta \right)} & \sin{\left(\Phi \right)} \sin{\left(\Psi \right)} \sin{\left(\Theta \right)} + \cos{\left(\Phi \right)} \cos{\left(\Psi \right)} & - \sin{\left(\Phi \right)} \cos{\left(\Psi \right)} + \sin{\left(\Psi \right)} \sin{\left(\Theta \right)} \cos{\left(\Phi \right)}\\\ - \sin{\left(\Theta \right)} & \sin{\left(\Phi \right)} \cos{\left(\Theta \right)} & \cos{\left(\Phi \right)} \cos{\left(\Theta \right)}\end{matrix}\right]\begin{bmatrix} U \\\ V \\\ W \end{bmatrix}
 \end{aligned}
 $$
-
-</div>
 
 と表現される。これを**航法方程式**という。
 
@@ -206,8 +195,6 @@ $$
 しかし、実際にセンサーから得ることができるのは$\mathbf \omega$であるので、$\mathbf\omega$から$\left[\begin{matrix}\dot\Phi&\dot\Theta&\dot\Psi\end{matrix}\right]^T$を得る式を計算する。
 上の式を成分表示すると、
 
-<div style="overflow-x: auto; white-space: nowrap">
-
 $$
 \begin{aligned}
 \begin{bmatrix}P\\\ Q\\\ R\end{bmatrix}&=
@@ -216,8 +203,6 @@ $$
 \begin{bmatrix}\dot\Phi\\\ \dot\Theta\\\ \dot\Psi\end{bmatrix}
 \end{aligned}
 $$
-
-</div>
 
 よって逆行列をかけてやれば
 $$
@@ -234,8 +219,6 @@ $$
 ## 1.4. まとめ
 
 剛体の非線形運動方程式は以下の４つの連立方程式として表される。
-
-<div style="overflow-x: auto; white-space: nowrap">
 
 $$
 \begin{aligned}
@@ -261,5 +244,3 @@ $$
 \begin{bmatrix}P\\\ Q\\\ R\end{bmatrix}
 \end{aligned}
 $$
-
-</div>
