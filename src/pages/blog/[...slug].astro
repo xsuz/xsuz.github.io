@@ -1,124 +1,48 @@
 ---
-import { type CollectionEntry, getCollection, render } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
+	const posts = await getCollection("blog");
 	return posts.map((post) => ({
 		params: { slug: post.id },
 		props: post,
 	}));
 }
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 const { Content } = await render(post);
 
-const prevPost = (await getCollection('blog'))
+const prevPost = (await getCollection("blog"))
 	.filter((p) => p.data.date < post.data.date)
 	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())[0];
-const nextPost = (await getCollection('blog'))
+const nextPost = (await getCollection("blog"))
 	.filter((p) => p.data.date > post.data.date)
 	.sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())[0];
 ---
 
 <BlogPost {...post.data}>
 	<Content />
-	
-	<nav>
-	{prevPost && (
-		<a href={`/blog/${prevPost.id}/`} class="prev">← {prevPost.data.title}</a>
-	)}
-	{nextPost && (
-		<a href={`/blog/${nextPost.id}/`} class="next">{nextPost.data.title} →</a>
-	)}
+
+	<nav class="flex justify-between mt-16 items-center">
+		<div class="text-left">
+			{
+				prevPost && (
+					<a href={`/blog/${prevPost.id}/`}>
+						← {prevPost.data.title}
+					</a>
+				)
+			}
+		</div>
+		<div class="text-right">
+			{
+				nextPost && (
+					<a href={`/blog/${nextPost.id}/`}>
+						{nextPost.data.title} →
+					</a>
+				)
+			}
+		</div>
 	</nav>
-
 </BlogPost>
-
-<style>
-	main {
-		width: 960px;
-	}
-	ul {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 2rem;
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-	}
-	ul li {
-		width: calc(50% - 1rem);
-	}
-	ul li * {
-		text-decoration: none;
-		transition: 0.2s ease;
-	}
-	ul li:first-child {
-		width: 100%;
-		margin-bottom: 1rem;
-		text-align: center;
-	}
-	ul li:first-child img {
-		width: 100%;
-	}
-	ul li:first-child .title {
-		font-size: 2.369rem;
-	}
-	ul li img {
-		margin-bottom: 0.5rem;
-		border-radius: 12px;
-	}
-	ul li a {
-		display: block;
-	}
-	.title {
-		margin: 0;
-		color: rgb(var(--black));
-		line-height: 1;
-	}
-	.date {
-		margin: 0;
-		color: rgb(var(--gray));
-	}
-	ul li a:hover h4,
-	ul li a:hover .date {
-		color: rgb(var(--accent));
-	}
-	ul a:hover img {
-		box-shadow: var(--box-shadow);
-	}
-	@media (max-width: 720px) {
-		ul {
-			gap: 0.5em;
-		}
-		ul li {
-			width: 100%;
-			text-align: center;
-		}
-		ul li:first-child {
-			margin-bottom: 0;
-		}
-		ul li:first-child .title {
-			font-size: 1.563em;
-		}
-	}
-	
-	nav {
-		display: flex;
-		justify-content: space-between;
-		margin-top: 4rem;
-	}
-	nav a {
-		color: rgb(var(--gray));
-		text-decoration: none;
-		transition: 0.2s ease;
-	}
-	.prev {
-		text-align: left;
-	}
-	.next {
-		text-align: right;
-	}
-</style>
