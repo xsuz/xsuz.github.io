@@ -73,14 +73,17 @@ ATmega4809を導入するとに一番の障壁となるのはUPDI関連だと思
 以下は、COM6に接続されたUPDIライタを使い`main.cpp`を書き込む場合の手順です。
 
 1. コードをコンパイルする。これはatmega328pと同様に以下を実行すればよいです。
-```
+```bash
 avr-gcc main.cpp -mmcu=atmega4809 -o main.elf
 ```
 2. ROMに書き込める形式に変換する。Intel形式に変換して、マイコンのROMに書き込めるようにします。
-```
+```bash
 avr-objcopy -O ihex main.elf main.hex
 ```
 3. マイコンに書き込むための回路を組む。jtag2updiのREADMEにもあるように、以下の回路を組みます。
+
+
+<div style="overflow-x: auto; white-space: nowrap">
 <pre>
                                             V_prog                 V_target
                                               +-+                     +-+
@@ -99,8 +102,10 @@ avr-objcopy -O ihex main.elf main.hex
              Protocol                          GND     Protocol      GND
 
 </pre>
+</div>
+
 4. マイコンに書き込む
-```
+```bash
 avrdude -c jtag2updi -p atmega4809 -P COM6 -U flash:w:main.hex
 ```
 

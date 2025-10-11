@@ -7,6 +7,9 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
 
+import tailwindcss from '@tailwindcss/vite';
+
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://xsuz.github.io',
@@ -15,5 +18,9 @@ export default defineConfig({
   markdown: {
       remarkPlugins: [remarkMath],
       rehypePlugins: [rehypeKatex],
-	},
+    },
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

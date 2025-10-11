@@ -92,6 +92,9 @@ $$
 \therefore \int_{t_1}^{t_2}\{\sum_i\mathbf F_i(t)\cdot \delta \mathbf r_i(t)\}dt -\int_{t_1}^{t_2}\sum_i\{m_i\frac{d^2}{dt^2}\mathbf r_i(t)\cdot \delta \mathbf r_i(t)\}dt=0
 $$
 ここで、$\mathbf F_i$のポテンシャル$U_i$が存在すると仮定すれば、
+
+<div style="overflow-x: auto; white-space: nowrap">
+
 $$
 \begin{aligned}
 \int_{t_1}^{t_2}\{\sum_i\mathbf F_i(t)\cdot \delta \mathbf r_i(t)\}dt&=-\int_{t_1}^{t_2}\{\sum_i\delta \mathbf r_i(t)\cdot \nabla_iU_i\}dt
@@ -99,7 +102,13 @@ $$
 \\ &=-\delta\int_{t_1}^{t_2}U(\mathbf r_1,\mathbf r_2,\cdots,t)dt
 \end{aligned}
 $$
+
+</div>
+
 また、第2項に部分積分を適用すると、
+
+<div style="overflow-x: auto; white-space: nowrap">
+
 $$
 \begin{aligned}
 \int_{t_1}^{t_2}\sum_i m_i\frac{d^2}{dt^2}\mathbf r_i(t)\cdot \delta \mathbf r_i(t)dt&=\left[\sum_i \frac{1}{2}m_i\mathbf v_i(t)\cdot\delta\mathbf r_i(t)\right]_{t_1}^{t_2}-\int _{t_1}^{t_2} \sum_i m_i \mathbf v_i \delta \mathbf v_i  dt
@@ -107,6 +116,9 @@ $$
 \\ &= -\delta \int _{t_1}^{t_2} T(\mathbf v_1,\mathbf v_2 \cdots , t)dt
 \end{aligned}
 $$
+
+</div>
+
 以上よりハミルトンの原理が導かれる。\
 II) ダランベールの原理 $\Leftarrow$ ハミルトンの原理\
 I)の過程を逆に辿ることにより示すことができる。
@@ -141,23 +153,36 @@ $$
 とおいて、$x(t)$の満たす条件を考える。
 
 ハミルトンの原理より、
+
 $$
 \delta \int_{t_1}^{t_2}\mathcal L(x(t),\dot x(t),t)dt=0
 $$
+
+<div style="overflow-x: auto; white-space: nowrap">
+
 $$
 \therefore \int_{t_1}^{t_2}\left(\mathcal L(x(t)+\delta x(t),\dot x(t) + \delta \dot x(t),t)-\mathcal L(x(t),\dot x(t),t)\right)dt=0
 $$
+
+</div>
+
 そこで、$\mathcal L$を一次近似すると
 $$
 \int_{t_1}^{t_2}\left(\frac{\partial \mathcal L}{\partial x}(x(t),\dot x(t),t)\delta x+\frac{\partial \mathcal L}{\partial \dot x}(x(t),\dot x(t),t)\delta \dot x\right)dt=0
 $$
-ここで、第二項を部分積分すると
+また、第二項を部分積分すると
+
+<div style="overflow-x: auto; white-space: nowrap">
+
 $$
 \begin{aligned}
 \int_{t_1}^{t_2}\left(\frac{\partial \mathcal L}{\partial \dot x}(x(t),\dot x(t),t)\delta \dot x\right)dt&=\left[\frac{\partial \mathcal L}{\partial \dot x}(x(t),\dot x(t),t)\ \delta x(t)\right]-\int_{t_1}^{t_2}\frac {d}{dt}\left(\frac{\partial \mathcal {L}}{\partial \dot x}\right)\delta xdt
 \\ &= -\int_{t_1}^{t_2}\frac {d}{dt}\left(\frac{\partial \mathcal {L}}{\partial \dot x}\right)\delta x\ dt
 \end{aligned}
 $$
+
+</div>
+
 ただし、一行目から二行目の過程で境界条件　$\delta x(t_1)=\delta x(t_2)=0$　を用いた。以上から
 $$
 \int_{t_1}^{t_2}\left(\frac {\partial \mathcal L}{\partial x}-\frac {d}{dt}\left(\frac{\partial \mathcal {L}}{\partial \dot x}\right)\right)\delta x\ dt=0
