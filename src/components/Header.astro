@@ -1,56 +1,103 @@
 ---
-import { SITE_TITLE } from '../consts';
-import HeaderLink from './HeaderLink.astro';
-import logo from '../assets/avatar.jpg';
+import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
+import logo from "../assets/avatar.jpg";
 ---
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
-<nav class="relative bg-orange-500 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
+
+<script
+  src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
+  type="module"></script>
+<nav
+  class="sticky top-0 z-50 bg-orange-500 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10"
+>
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-    <div class="relative  bg-orange-500 flex h-16 items-center justify-between">
+    <div class="relative bg-orange-500 flex h-16 items-center justify-between">
+      <div
+        class="absolute left-0 right-0 text-white text-center py-2 font-medium sm:hidden"
+      >
+        {SITE_TITLE}
+      </div>
+
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
         <!-- Mobile menu button-->
-        <button type="button" command="--toggle" commandfor="mobile-menu" class="relative inline-flex items-center justify-center rounded-md p-2 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
+        <button
+          type="button"
+          command="--toggle"
+          commandfor="mobile-menu"
+          class="relative inline-flex items-center justify-center rounded-md p-2 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500"
+        >
           <span class="absolute -inset-0.5"></span>
           <span class="sr-only">Open main menu</span>
-		  <!-- Heroicon name: outline/bars-3 -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
-            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- Heroicon name: outline/bars-3 -->
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            data-slot="icon"
+            aria-hidden="true"
+            class="size-6 in-aria-expanded:hidden"
+          >
+            <path
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
           </svg>
-		  <!-- Heroicon name: outline/x-mark -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
-            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- Heroicon name: outline/x-mark -->
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            data-slot="icon"
+            aria-hidden="true"
+            class="size-6 not-in-aria-expanded:hidden"
+          >
+            <path
+              d="M6 18 18 6M6 6l12 12"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
           </svg>
         </button>
       </div>
-      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+      <div
+        class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+      >
         <div class="hidden sm:ml-6 sm:block">
-          <div class="flex space-x-4">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog/">Blog</HeaderLink>
-			<HeaderLink href="/tags/">Tags</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
+          <div class="flex space-x-4 text-white">
+            <HeaderLink href="/">Home</HeaderLink>
+            <HeaderLink href="/blog">Blog</HeaderLink>
+            <HeaderLink href="/tags">Tags</HeaderLink>
+            <HeaderLink href="/about">About</HeaderLink>
           </div>
         </div>
       </div>
-      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+
+      <div
+        class="block inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+      >
         <!-- Profile dropdown -->
-        <el-dropdown class="relative ml-3">
-          <a href="/about" class="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-            <span class="absolute -inset-1.5"></span>
-            <span class="sr-only">Open user menu</span>
-            <img src={logo.src} alt="" class="size-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10" />
-		  </a>
-        </el-dropdown>
+        <a
+          href="/about"
+          class="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+        >
+          <span class="absolute -inset-1.5"></span>
+          <span class="sr-only">Open user menu</span>
+          <img
+            src={logo.src}
+            alt=""
+            class="size-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10"
+          />
+        </a>
       </div>
     </div>
   </div>
-
   <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
-    <div class="space-y-1 px-2 pt-2 pb-3">
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog/">Blog</HeaderLink>
-		<HeaderLink href="/tags/">Tags</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
+    <div class="space-y-1 px-2 pt-2 pb-3 text-white">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/tags">Tags</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
     </div>
   </el-disclosure>
 </nav>
