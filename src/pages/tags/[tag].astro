@@ -1,0 +1,50 @@
+---
+import {getCollection} from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Header from '../../components/Header.astro';
+
+export async function getStaticPaths({}) {
+  
+  const all_posts = (await getCollection('blog'));
+  let tags = [...new Set(all_posts.map(post=>post.rendered?.metadata?.frontmatter?.tags).flat())].filter(tag => tag);
+  tags = Array.from(tags).filter(tag => tag); // remove undefined tags
+  return Array.from(tags).map(tag => {
+    const posts = all_posts.filter(post => post.rendered?.metadata?.frontmatter?.tags?.includes(tag));
+    return {
+      params: { tag },
+      props: { tag, posts },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Posts tagged with "${tag}"`} />
+	</head>
+	<body>
+		<Header />
+		<main>
+      <section>
+        <h2>Posts tagged with "{tag}"</h2>
+        <ul>
+          {posts.map(post => (
+            <li>
+              <a href={`/blog/${post.id}/`}>
+                <h4 class="title">{post.data.title}</h4>
+                <p class="date"><FormattedDate date={post.data.date} /></p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
