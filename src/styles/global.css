@@ -133,4 +133,27 @@ hr {
 	p > iframe {
 		@apply w-full h-fit mx-auto aspect-video;
 	}
+
+	/* code */
+
+
+	/* link */
+	a {
+		@apply text-primary underline decoration-1 underline-offset-2;
+	}
+	
+	/* code block */
+
+	p > code,
+	li > code {
+		@apply text-sm lg:text-base xl:text-lg border px-1 py-[0.125rem] rounded-md;
+	}
+
+	.astro-code {
+		@apply my-8 xl:my-12 rounded-md overflow-x-auto p-[1em];
+	}
+
+	.astro-code span {
+		@apply text-sm lg:text-base xl:text-lg;
+	}
 }
