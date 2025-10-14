@@ -1,6 +1,7 @@
 ---
 import { SITE_TITLE } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
+import {Image} from "astro:assets";
 import logo from "../assets/avatar.jpg";
 ---
 
@@ -8,10 +9,10 @@ import logo from "../assets/avatar.jpg";
   src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
   type="module"></script>
 <nav
-  class="sticky top-0 z-50 bg-orange-500 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10"
+  class="sticky top-0 z-50 bg-primary after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10"
 >
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-    <div class="relative bg-orange-500 flex h-16 items-center justify-between">
+    <div class="relative bg-primary flex h-16 items-center justify-between">
       <div class="absolute left-0 right-0 text-center py-2 font-medium sm:hidden">
         <a class="text-white" href="/">
           <span class="text-white font-bold">{SITE_TITLE}</span>
@@ -24,7 +25,7 @@ import logo from "../assets/avatar.jpg";
           type="button"
           command="--toggle"
           commandfor="mobile-menu"
-          class="relative inline-flex items-center justify-center rounded-md p-2 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500"
+          class="relative inline-flex items-center justify-center rounded-md p-2 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-accent"
         >
           <span class="absolute -inset-0.5"></span>
           <span class="sr-only">Open main menu</span>
@@ -79,12 +80,12 @@ import logo from "../assets/avatar.jpg";
         <!-- Profile dropdown -->
         <a
           href="/about"
-          class="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+          class="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           <span class="absolute -inset-1.5"></span>
           <span class="sr-only">Open user menu</span>
-          <img
-            src={logo.src}
+          <Image
+            src={logo}
             alt=""
             class="size-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10"
           />

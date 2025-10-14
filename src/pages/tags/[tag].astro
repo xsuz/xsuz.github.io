@@ -1,18 +1,15 @@
 ---
-import {getCollection} from 'astro:content';
-import BaseHead from '../../components/BaseHead.astro';
-import Footer from '../../components/Footer.astro';
-import Header from '../../components/Header.astro';
-import {SITE_TITLE} from '../../consts';  
-import Card from '../../components/Card.astro';
+import { getCollection } from "astro:content";
+import Card from "../../components/Card.astro";
+import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths({}) {
-  
-  const all_posts = (await getCollection('blog'));
-  let tags = [...new Set(all_posts.map(post=>post.rendered?.metadata?.frontmatter?.tags).flat())].filter(tag => tag);
-  tags = Array.from(tags).filter(tag => tag); // remove undefined tags
-  return Array.from(tags).map(tag => {
-    const posts = all_posts.filter(post => post.rendered?.metadata?.frontmatter?.tags?.includes(tag));
+  const all_posts = await getCollection("blog");
+  const tags = [
+    ...new Set(all_posts.map((post) => post.data?.tags).flat()),
+  ].filter((tag) => tag);
+  return Array.from(tags).map((tag) => {
+    const posts = all_posts.filter((post) => post.data?.tags?.includes(tag));
     return {
       params: { tag },
       props: { tag, posts },
@@ -24,23 +21,16 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={`#${tag} - ${SITE_TITLE}`} />
-	</head>
-	<body>
-		<Header />
-		<main>
-      <section>
-        <h2>Posts tagged with #{tag}</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          {posts.map(post => (
-            <Card title={post.data.title} date={post.data.date} id={post.id} />
-          ))}
-        </div>
-      </section>
-    </main>
-    <Footer />
-  </body>
-</html>
+<Layout title=`#${tag}`>
+  <div class="flex items-center">
+    <h3 class="">Posts tagged with &nbsp;</h3>
+    <h3 class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">#{tag}</h3>
+  </div>
+  <div class="grid md:grid-cols-2 gap-8 mt-12">
+    {
+      posts.map((post) => (
+        <Card title={post.data.title} date={post.data.date} id={post.id} tags={post.data.tags}/>
+      ))
+    }
+  </div>
+</Layout>

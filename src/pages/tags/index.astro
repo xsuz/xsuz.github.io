@@ -1,45 +1,43 @@
 ---
-import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
-import BaseHead from '../../components/BaseHead.astro';
-import Footer from '../../components/Footer.astro';
-import Card from '../../components/Card.astro';
-import Header from '../../components/Header.astro';
-import { SITE_TITLE } from '../../consts';
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
 
-const all_posts = (await getCollection('blog'));
-const tags = Array.from(new Set(all_posts.map(post=>post.rendered.metadata.frontmatter.tags).flat().filter(Boolean)));
+const all_posts = await getCollection("blog");
+type FrontmatterPost = (typeof all_posts)[number] & {
+	rendered: {
+		metadata: {
+			frontmatter: {
+				tags?: string[];
+			};
+		};
+	};
+};
+const tags = Array.from(
+	new Set(
+		(all_posts as FrontmatterPost[])
+			.map((post) => post.rendered.metadata.frontmatter.tags ?? [])
+			.flat()
+			.filter(Boolean),
+	),
+);
 ---
 
-
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul class="space-y-12">
-					{tags.sort().map(tag => {
-                        const posts = all_posts.filter(post => post.rendered.metadata.frontmatter.tags?.includes(tag));
-                        return (
-                            <li>
-                                <h3 class="title">#{tag}</h3>
-                                <ul class="grid md:grid-cols-1 gap-8">
-                                    {posts.map(post => (
-                                    	<li>
-											<Card title={post.data.title} date={post.data.date} id={post.id} />
-                                    	</li>
-                                    ))}
-                                </ul>
-                            </li>
-                        );
-                    })}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout title="Tags">
+	<section>
+		<h3 class="text-3xl font-bold mb-12">Tags</h3>
+		<div class="flex flex-wrap gap-2 mt-12">
+			{
+				tags.sort().map((tag) => {
+					return (
+						<a
+							href={`/tags/${tag}`}
+							class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded hover:bg-gray-300"
+						>
+							<h2>#{tag}</h2>
+						</a>
+					);
+				})
+			}
+		</div>
+	</section>
+</Layout>
