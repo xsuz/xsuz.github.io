@@ -20,16 +20,6 @@ main {
 	padding: 3em 1em;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
-}
 h1 {
 	font-size: 3.052em;
 }
@@ -46,27 +36,12 @@ h5 {
 	font-size: 1.25em;
 }
 
-strong,
-b {
-	font-weight: 700;
-}
 p {
 	margin: 1em;
 }
 
-blockquote {
-    border-top: 3px solid var(--color-primary);
-    border-bottom: 3px solid var(--color-primary);
-	border-left: 3px solid var(--color-primary);
-	border-right: 3px solid var(--color-primary);
-	padding: 0 0 0 20px;
-	margin: 1em;
-	font-size: 1.333em;
-}
-
 hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
+	@apply my-8 xl:my-12 border-[0.5px];
 }
 
 @media (max-width: 720px) {
@@ -100,4 +75,62 @@ hr {
 	overflow-y: hidden;
     text-align: center;
 	white-space: nowrap;
+}
+
+#article-content {
+	/* paragraphs */
+	p {
+		@apply tracking-wide leading-relaxed 2xl:leading-loose sm:text-[1.125rem] lg:text-[1.25rem];
+	}
+
+	/* list */
+	ul {
+		@apply pl-[1.125rem] xl:pl-[1.25rem] list-outside list-disc my-4;
+	}
+
+	ol {
+		@apply pl-[1.125rem] xl:pl-[1.25rem] list-outside list-decimal my-4;
+	}
+
+	ol > li::marker {
+		@apply font-semibold;
+	}
+
+	ul > li,
+	ol > li {
+		@apply py-1 tracking-wide leading-relaxed 2xl:leading-loose lg:text-[1.125rem] xl:text-[1.25rem];
+	}
+
+	ul > li > ul {
+		@apply pl-4 py-1 my-0;
+	}
+
+	ol > li > ol {
+		@apply pl-6 py-0 my-0;
+	}
+
+	/* footnote ol */
+	ol > li[id^="user-content-fn"] p {
+		@apply inline;
+	}
+
+	/* image */
+	p > img {
+		@apply rounded-md lg:max-w-[75%] xl:max-w-[66.6666%] mx-auto m-12 xl:mt-12;
+	}
+
+	/* blockquote */
+	blockquote {
+		@apply block border-primary border-3 px-4 py-2 w-full h-fit my-8 xl:my-12;
+	}
+
+	/* hr */
+	hr {
+		@apply my-8 xl:my-12 border-[0.5px];
+	}
+
+	/* iframe */
+	p > iframe {
+		@apply w-full h-fit mx-auto aspect-video;
+	}
 }

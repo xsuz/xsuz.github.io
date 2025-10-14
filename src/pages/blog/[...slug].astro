@@ -24,38 +24,39 @@ const nextPost = (await getCollection("blog"))
 ---
 
 <Layout title=`${post.data.title}`>
-	<article>
-		<div class="mb-6 space-y-2">
-			<h2 class="font-bold">{post.data.title}</h2>
-			<div class="text-sm text-gray-600 grid grid-rows-2">
-				<div class="flex flex-wrap mt-2">
-					{
-						post.data.tags?.map((tag) => (
-							<a
-								href={`/tags/${tag}`}
-								class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded hover:bg-gray-300"
-							>
-								#{tag}
-							</a>
-						))
-					}
-				</div>
-				<div class="flex items-center gap-2">
-					<FormattedDate date={post.data.date} />
-					{
-						post.data.updatedDate && (
-							<div class="last-updated-on">
-								( Last updated on{" "}
-								<FormattedDate date={post.data.updatedDate} />)
-							</div>
-						)
-					}
-				</div>
+	<div class="mb-6 space-y-2">
+		<h2 class="font-bold">{post.data.title}</h2>
+		<div class="text-sm text-gray-600 grid grid-rows-2">
+			<div class="flex flex-wrap mt-2">
+				{
+					post.data.tags?.map((tag) => (
+						<a
+							href={`/tags/${tag}`}
+							class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded hover:bg-gray-300"
+						>
+							#{tag}
+						</a>
+					))
+				}
 			</div>
-			<hr />
+			<div class="flex items-center gap-2">
+				<FormattedDate date={post.data.date} />
+				{
+					post.data.updatedDate && (
+						<div class="last-updated-on">
+							( Last updated on{" "}
+							<FormattedDate date={post.data.updatedDate} />)
+						</div>
+					)
+				}
+			</div>
 		</div>
-		<Content />
-	</article>
+		<hr />
+
+		<article id="article-content">
+			<Content />
+		</article>
+	</div>
 
 	<nav class="flex justify-between mt-16 items-center">
 		{

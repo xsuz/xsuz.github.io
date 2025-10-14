@@ -1,34 +1,12 @@
 ---
+import {render} from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import {Content} from "../content/about.md";
+
 ---
 
 <Layout title="【自己紹介】">
-	<h2>【自己紹介】</h2>
-    <section>
-        <p>名前 : すずゆー</p>
-        <p>属性 : 2002年生まれ</p>
-        <p>所属 : 東京工業大学 工学院機械系</p>
-        <p>役職 : 鳥人間サークルMeister24代 設計＆電装・操舵班主任</p>
-        <p>
-            興味分野 : 柔軟構造力学，宇宙工学，鳥人間
-        </p>
-        <p>好きな食べ物 : コロッケ</p>
-        <p>趣味 : 電子工作，プログラミング，ケーキ作り，（数学と物理）</p>
-        <p>得意ジャンル : プログラミング(C, C++, Python, Rust)，電子工作(STM32, AVR, RP2350)</p>
-    </section>
-    <section>
-        <h3>来歴</h3>
-        <p>2022年4月 : 一浪の末，無事に大学入学．</p>
-        <p>2022年4月 : ちょっと遅れてTwitterを始める</p>
-        <p>2022年6月 : なぜか鳥人間サークルに入部</p>
-        <p>2022年9月 : このブログを始める</p>
-        <p>2023年7月 : 電装班の一員として鳥人間コンテストに出場</p>
-        <p>2023年8月 : アカウント名を現在の「すずゆー」に変更</p>
-        <p>2024年7月 : 電装班主任として鳥人間コンテストに出場</p>
-        <p>2025年4月 : ロボット系の研究室に配属</p>
-    </section>
-    <section>
-        <h3>目標</h3>
-        <p>勉強したことをアウトプットして，知識を定着させる</p>
-    </section>
+	<article id="article-content">
+        <Content />
+	</article>
 </Layout>
