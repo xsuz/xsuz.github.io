@@ -23,11 +23,11 @@ const nextPost = (await getCollection("blog"))
 	.sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())[0];
 ---
 
-<Layout title=`${post.data.title}`>
+<Layout title=`${post.data.title}` image={post.data.heroImage} description={post.data.description}>
 	<div class="mb-6 space-y-2">
 		<h2 class="font-bold">{post.data.title}</h2>
 		<div class="text-sm text-gray-600 grid grid-rows-2">
-			<div class="flex flex-wrap mt-2">
+    		<div class="flex flex-wrap gap-2 mt-2">
 				{
 					post.data.tags?.map((tag) => (
 						<a

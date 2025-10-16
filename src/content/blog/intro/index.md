@@ -1,9 +1,8 @@
 ---
 title: "はじめまして"
 date: 2022-09-17T21:39:09+09:00
-archives:
-    - 2022-09
-    - 2022
+description: "自己紹介"
+tags: []
 draft: false
 ---
 

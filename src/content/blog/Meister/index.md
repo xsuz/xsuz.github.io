@@ -1,13 +1,9 @@
 ---
 title: 鳥人間サークルでつくったもの
 date: 2024-11-04T09:30:04+09:00
-archives:
-    - 2024-11
-    - 2024
+description: 鳥人間サークルMeisterで製作したものの紹介
 tags:
-    - Meister
     - 鳥人間
-categories: [Meister]
 draft: false
 ---
 

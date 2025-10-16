@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "mdgen": "tsx ./cli/mdgen.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.7",
@@ -19,5 +20,10 @@
     "remark-math": "^6.0.0",
     "sharp": "^0.34.3",
     "tailwindcss": "^4.1.14"
+  },
+  "devDependencies": {
+    "@inquirer/prompts": "^7.9.0",
+    "@types/node": "^24.8.0",
+    "tsx": "^4.20.6"
   }
 }

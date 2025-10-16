@@ -1,16 +1,12 @@
 ---
 title: "HugoからAstroへ移行した"
 date: 2025-10-15T04:18+09:00
-archives:
-    - 2025
-    - 2025-10
-categories: [Aerodynamics]
+description: "HugoからAstroへ移行したときのメモ"
+categories: [web]
 tags:
-    - Astro
-    - Hugo
-    - JavaScript
-    - CSS
-    - HTML
+    - astro
+    - hugo
+    - web
 draft: false
 ---
 

@@ -1,15 +1,12 @@
 ---
 title: "ATmega4809の紹介"
 date: 2022-12-11T14:59:20+09:00
-archives:
-    - 2022-12
-    - 2022
+description: "ATmega4809の特徴と使い方の紹介"
 draft: false
-categories: [Electronics]
 tags:
-    - AVR
-    - megaAVR
-    - Arduino
+    - avr
+    - megaavr
+    - arduino
 ---
 
 こんにちは！xsuzです。

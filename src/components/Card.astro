@@ -18,14 +18,15 @@ const { title, date, id, tags } = Astro.props;
     <a href={`/blog/${id}`} class="text-xl font-semibold mb-2 hover:underline">
         <h5>{title}</h5>
     </a>
-    <FormattedDate date={date} />
+
+    <div class="flex items-center text-sm text-gray-600">
+        <FormattedDate date={date} />
+    </div>
 
     <div class="flex flex-wrap gap-2 mt-2">
         {
             tags?.map((tag) => (
-                <div
-                    class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
-                >
+                <div class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
                     #{tag}
                 </div>
             ))

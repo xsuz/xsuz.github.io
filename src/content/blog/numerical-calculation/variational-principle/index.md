@@ -2,14 +2,11 @@
 title: "解析力学 1"
 date: 2023-10-10T05:33:19+09:00
 updatedDate : 2025-10-11T17:04:00+09:00
-archives:
-    - 2023-10
-    - 2023
-categories: [Aerodynamics]
+description: "解析力学の基礎である変分原理とラグランジュ方程式について復習．"
 tags:
-    - Physics
-    - Numerical-Calculation
-    - Computer-Science
+    - physics
+    - numerical-calculation
+    - computer-science
 draft: false
 ---
 

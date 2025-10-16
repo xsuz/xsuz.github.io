@@ -2,15 +2,12 @@
 title: "飛行力学入門-1"
 date: 2023-08-29T10:27:15+09:00
 updatedDate : 2025-10-11T17:04:00+09:00
-archives:
-    - 2023-08
-    - 2023
-categories: [Aerodynamics]
+description: "航空機の運動方程式の導出"
 tags:
-    - Physics
-    - Mathmatics
-    - Aerodynamics
-    - Control-Theory
+    - physics
+    - math
+    - aerodynamics
+    - control-theory
 draft: false
 ---
 

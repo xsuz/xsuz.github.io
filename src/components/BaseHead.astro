@@ -9,11 +9,12 @@ import logo from "../assets/avatar.jpg";
 interface Props {
 	title: string;
 	image?: ImageMetadata;
+	description?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, image } = Astro.props;
+const { title, image, description } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -33,6 +34,9 @@ const { title, image } = Astro.props;
 <meta prefix="og: http://ogp.me/ns#" />
 <meta property="og:title" content={title} />
 <meta property="og:site_name" content={SITE_TITLE} />
+{
+	description ? <meta property="og:description" content={description} /> : null
+}
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:url" content={canonicalURL.toString()} />
