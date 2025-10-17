@@ -8,21 +8,21 @@ draft: true
 ---
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=true} -->
-
 <!-- code_chunk_output -->
+
+## 目次
 
 1. [SEGGER RTTとは](#segger-rttとは)
 2. [SEGGER RTTの使い方](#segger-rttの使い方)
 3. [DAPLinkでSEGGER RTTを使う](#daplinkでsegger-rttを使う)
-    1. [SEGGER RTTがやっていること](#segger-rttがやっていること)
-    2. [方法1:probe-rs](#方法1probe-rs)
-    3. [方法2:pyocd](#方法2pyocd)
-    4. [方法3:openocd](#方法3openocd)
+    1. [方法1:probe-rs](#方法1probe-rs)
+    2. [方法2:pyocd](#方法2pyocd)
+    3. [方法3:openocd](#方法3openocd)
 4. [おわりに](#おわりに)
 
 <!-- /code_chunk_output -->
 
-
+---
 
 ## SEGGER RTTとは
 
@@ -108,8 +108,6 @@ SEGGER RTTで送ったデバッグ情報を確認するには，SEGGERの提供�
 
 ここからが本題です．本来はJLinkデバッガが必要なSEGGER RTTをDAPLinkで使う方法について説明します．
 
-### SEGGER RTTがやっていること
-
 SEGGER RTTを使っている時，マイコンがやっていることは，メモリ上にリングバッファを作成し，そこにデータを書き込むだけです．一方，デバッガ側はターゲットのメモリを読み取ってリングバッファからデータを取得しPCに送ることをやっています．
 
 つまり，デバッガを変えても，デバッガがマイコンのメモリを読み取ることができれば理論上はSEGGER RTTを使うことができます．
@@ -135,7 +133,7 @@ probe-rsには`attach`というコマンドがあり，これを使ってター�
 probe-rs attach --chip RP2040 ./firmware.elf
 ```
 
-注意点として，書き込んだELFファイルを指定する必要があります．ELFファイルからprobe-rsがメモリ上のRTTバッファの位置を特定するために必要なのだろうと思います．
+注意点として，書き込んだELFファイルを指定する必要があります．probe-rsがメモリ上のRTTバッファの位置を特定するために必要なのだろうと思います．
 
 実行すると，RTTの内容が表示されます．コマンドを実行している間はRTTの内容がリアルタイムで表示され続けます．
 

@@ -13,11 +13,10 @@
   --color-accent: #ff5252;
 }
 
-main {
-	width: 960px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
+html,
+body {
+	scroll-behavior: smooth;
+	scroll-padding-top: 4em;
 }
 
 h1 {
@@ -45,12 +44,6 @@ hr {
 }
 
 @media (max-width: 720px) {
-	body {
-		font-size: 18px;
-	}
-	main {
-		padding: 1em;
-	}
 	h1 {
 		font-size: 2.488em;
 	}

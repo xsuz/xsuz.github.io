@@ -19,17 +19,19 @@ const { title, image, description } = Astro.props;
 <!doctype html>
 <html lang="ja">
 	<head>
-		<BaseHead title={`${title} - ${SITE_TITLE}`} image={image} description={description} />
+		<BaseHead
+			title={`${title} - ${SITE_TITLE}`}
+			image={image}
+			description={description}
+		/>
 	</head>
 
 	<body>
 		<Header />
-		<main>
-			<article>
-				<div class="container mx-auto px-6 py-8">
-					<slot />
-				</div>
-			</article>
+		<main class="mt-16 mb-8 max-w-[calc(100%-2em)] w-[960px] mx-auto px-6">
+			<div class="container mx-auto px-6 py-8">
+				<slot />
+			</div>
 		</main>
 		<Footer />
 	</body>

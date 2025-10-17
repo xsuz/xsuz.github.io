@@ -57,8 +57,10 @@ const nextPost = (await getCollection("blog"))
 			<Content />
 		</article>
 	</div>
+	
+	<hr class="my-8" />
 
-	<nav class="flex justify-between mt-16 items-center">
+	<nav class="grid justify-between grid-cols-1 md:grid-cols-2 gap-4">
 		{
 			prevPost && (
 				<a

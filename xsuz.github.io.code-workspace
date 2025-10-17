@@ -7,10 +7,6 @@
 		{
 			"name": "blog",
 			"path": "src/content/blog"
-		},
-		{
-			"name": "content",
-			"path": "src/content"
 		}
 	],
 	"settings": {

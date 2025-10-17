@@ -21,7 +21,7 @@ draft: false
 
 ## xfoilとは？？
 
-[![](img/xfoil_logo.gif)][xfoil]
+![xfoil](img/xfoil_logo.gif)
 
 鳥人間界隈でよく使われるXFLR5に搭載されている2次元翼型の解析プログラムです。
 
