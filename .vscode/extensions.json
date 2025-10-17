@@ -1,8 +1,7 @@
 {
   "recommendations": [
     "astro-build.astro-vscode",
-    "unifiedjs.vscode-mdx",
-    "arcanis.vscode-zipfs"
+    "unifiedjs.vscode-mdx"
   ],
   "unwantedRecommendations": []
 }
