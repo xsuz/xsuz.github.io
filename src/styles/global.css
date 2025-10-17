@@ -121,7 +121,7 @@ hr {
 
 	/* blockquote */
 	blockquote {
-		@apply block border-primary border-3 px-4 py-2 w-full h-fit my-8 xl:my-12;
+		@apply block border-primary border-3 px-4 py-2 w-full h-fit my-8 xl:my-12 text-gray-500;
 	}
 
 	/* hr */

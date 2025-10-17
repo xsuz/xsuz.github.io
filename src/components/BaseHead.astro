@@ -29,6 +29,7 @@ const { title, image, description } = Astro.props;
 	href={new URL("rss.xml", Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
+{description ? <meta name="description" content={description} /> : null}
 
 <!-- Google site verification -->
 <meta name="google-site-verification" content="2X59wfMbUNnhABKeMN4kK6vv9vnac2cTtAHftMUjasY" />

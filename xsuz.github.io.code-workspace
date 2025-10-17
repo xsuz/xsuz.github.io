@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"name": "xsuz.github.io",
+			"path": "."
+		},
+		{
+			"name": "blog",
+			"path": "src/content/blog"
+		},
+		{
+			"name": "content",
+			"path": "src/content"
+		}
+	],
+	"settings": {
+		"search.exclude": {
+			"**/.yarn": true,
+			"**/.pnp.*": true
+		},
+		"typescript.tsdk": ".yarn/sdks/typescript/lib",
+		"typescript.enablePromptUseWorkspaceTsdk": true
+	}
+}
