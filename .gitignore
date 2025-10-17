@@ -2,6 +2,8 @@
 dist/
 # generated types
 .astro/
+.pnp.cjs
+.pnp.loader.mjs
 
 # dependencies
 .yarn/
