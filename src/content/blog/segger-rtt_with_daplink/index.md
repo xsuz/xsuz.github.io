@@ -11,15 +11,15 @@ updatedDate: 2025-10-19
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=true} -->
 <!-- code_chunk_output -->
 
-## 目次
-
-1. [SEGGER RTTとは](#segger-rttとは)
-2. [SEGGER RTTの使い方](#segger-rttの使い方)
-3. [DAPLinkでSEGGER RTTを使う](#daplinkでsegger-rttを使う)
+1. [目次](#目次)
+2. [SEGGER RTTとは](#segger-rttとは)
+3. [SEGGER RTTの使い方](#segger-rttの使い方)
+4. [DAPLinkでSEGGER RTTを使う](#daplinkでsegger-rttを使う)
     1. [方法1:probe-rs](#方法1probe-rs)
     2. [方法2:pyocd](#方法2pyocd)
     3. [方法3:openocd](#方法3openocd)
-4. [おわりに](#おわりに)
+5. [おわりに](#おわりに)
+6. [追記(2025/10/19)](#追記20251019)
 
 <!-- /code_chunk_output -->
 
@@ -179,4 +179,6 @@ SEGGER RTTは本来JLinkデバッガ専用の仕組みですが，DAPLinkでも�
 
 ## 追記(2025/10/19)
 
-VSCode上だとopenocd使うのが一番よさそう^[https://xsuz.github.io/blog/stm32-development-environment/]
+VSCode上だとopenocd使うのが一番よさそう[^1]
+
+[^1]:https://xsuz.github.io/blog/stm32-development-environment/

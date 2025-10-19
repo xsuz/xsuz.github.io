@@ -32,10 +32,12 @@ draft: true
   - [本家のファイルをコピーする](#本家のファイルをコピーする)
   - [設定用ファイルをコピーする](#設定用ファイルをコピーする)
   - [初期化処理を追加](#初期化処理を追加)
-- [使い方](#使い方)
+  - [使い方](#使い方)
+- [使い方](#使い方-1)
   - [ビルド](#ビルド)
   - [ビルド & 書き込み](#ビルド--書き込み)
   - [デバッグ](#デバッグ)
+- [最後に](#最後に)
 
 <!-- /code_chunk_output -->
 
@@ -431,11 +433,14 @@ RTT(Real-Time Transfer)は、SEGGER社のJ-Linkデバッガが提供するリア
 
 UARTなどによるprintfと比較して
 
-- TAG/SWD経由でデータ転送するため書き込み回路以外要らない
-- CPUの実行を止めずにログを出力可能^[https://www.segger.com/products/debug-probes/j-link/technology/about-real-time-transfer/#internal-structures]
-- 通信速度が圧倒的に速い^[https://www.segger.com/products/debug-probes/j-link/technology/about-real-time-transfer/#rtt-performance]
-- クロック設定が分からなくなっても通信可能
-- デバッグ版と本番環境で同じコードを使える
+- TAG/SWD経由でデータ転送するため書き込み回路以外要らない[^segger-rtt-requirements]
+- CPUの実行を止めずにログを出力可能[^segger-rtt-internal-structures]
+- 通信速度が圧倒的に速い[^segger-rtt-performance]
+- デバッグ版と本番環境で同じコードを使える[^segger-rtt-target-implementation]
+
+といった利点があります．
+
+リアルタイム性が求められる場合は特にこのメリットが効いてくるため，私はよく使っています．
 
 ### 本家のファイルをコピーする
 
@@ -531,3 +536,8 @@ CMakeを使っているのでTinyUSBなども簡単に追加できそうです�
 - [STM32H503の例](https://github.com/xsuz/FDCANProbe)
     - Peripheral : FDCAN,I2C,UART(DMA),GPIO
     - Middleware : ThreadX
+
+[^segger-rtt-internal-structures]:https://www.segger.com/products/debug-probes/j-link/technology/about-real-time-transfer/#internal-structures
+[^segger-rtt-performance]:https://www.segger.com/products/debug-probes/j-link/technology/about-real-time-transfer/#rtt-performance
+[^segger-rtt-requirements]:https://www.segger.com/products/debug-probes/j-link/technology/about-real-time-transfer/#requirements
+[^segger-rtt-target-implementation]:https://www.segger.com/products/debug-probes/j-link/technology/about-real-time-transfer/#target-implementation
