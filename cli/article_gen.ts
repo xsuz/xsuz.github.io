@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import fs from "fs";
+import {existsSync,mkdirSync,writeFileSync} from "fs";
 import { input, select, confirm} from '@inquirer/prompts';
 
 const rootpath = "./src/content/blog";
@@ -20,7 +20,7 @@ async function main() {
         process.exit(1);
     }
 
-    if (fs.existsSync(filepath)) {
+    if (existsSync(filepath)) {
         console.error(`File already exists: ${filepath}`);
         process.exit(1);
     }
@@ -31,7 +31,7 @@ async function main() {
         process.exit(0);
     }
 
-    fs.mkdirSync(`${rootpath}/${slug}`, { recursive: true });
+    mkdirSync(`${rootpath}/${slug}`, { recursive: true });
 
     const content = `---
 title: ${title}
@@ -43,7 +43,7 @@ tags: [${tags.split(',').map(tag => tag.trim().toLowerCase()).join(', ')}]
 draft: true
 ---`;
 
-    fs.writeFileSync(filepath, content);
+    writeFileSync(filepath, content);
     console.log(`Created markdown file: ${filepath}`);
 }
 

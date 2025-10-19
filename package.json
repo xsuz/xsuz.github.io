@@ -7,7 +7,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "mdgen": "tsx ./cli/mdgen.ts"
+    "article-gen": "tsx ./cli/article_gen.ts",
+    "article-update": "tsx ./cli/article_update.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.7",
