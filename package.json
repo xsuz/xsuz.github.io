@@ -11,11 +11,9 @@
     "article-update": "tsx ./cli/article_update.ts"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.7",
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.6.0",
     "@tailwindcss/vite": "^4.1.14",
-    "@tailwindplus/elements": "^1.0.17",
     "astro": "^5.14.3",
     "astro-expressive-code": "^0.41.3",
     "rehype-katex": "^7.0.1",

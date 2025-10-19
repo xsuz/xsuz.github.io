@@ -5,9 +5,6 @@ import {Image} from "astro:assets";
 import logo from "../assets/avatar.jpg";
 ---
 
-<script
-  src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
-  type="module"></script>
 <nav
   class="sticky top-0 z-50 bg-primary after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10"
 >
@@ -23,8 +20,17 @@ import logo from "../assets/avatar.jpg";
         <!-- Mobile menu button-->
         <button
           type="button"
-          command="--toggle"
-          commandfor="mobile-menu"
+          onclick="(() => {
+            const menu = document.getElementById('mobile-menu');
+            const expanded = menu.hasAttribute('hidden') ? 'false' : 'true';
+            if (expanded === 'false') {
+              menu.removeAttribute('hidden');
+              this.setAttribute('aria-expanded', 'true');
+            } else {
+              menu.setAttribute('hidden', '');
+              this.setAttribute('aria-expanded', 'false');
+            }
+          })()"
           class="relative inline-flex items-center justify-center rounded-md p-2 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-accent"
         >
           <span class="absolute -inset-0.5"></span>
