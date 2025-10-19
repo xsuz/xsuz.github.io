@@ -151,10 +151,6 @@ hr {
 	}
 
 	.expressive-code {
-		@apply my-8 xl:my-12 rounded-md overflow-x-auto p-[1em];
-	}
-
-	.expressive-code span {
-		@apply text-sm lg:text-base xl:text-lg;
+		@apply my-8 xl:my-12 rounded-md;
 	}
 }

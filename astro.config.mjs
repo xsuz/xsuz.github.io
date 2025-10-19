@@ -14,10 +14,10 @@ export default defineConfig({
   site: 'https://xsuz.github.io',
   integrations: [sitemap(), expressiveCode({
     defaultProps: {
-      wrap: true,
+      wrap: false,
       preserveIndent: true,
-      themes: ['dracula', 'solarized-light'],
     },
+    themes:['monokai', 'github-light']
   })],
 
   markdown: {
