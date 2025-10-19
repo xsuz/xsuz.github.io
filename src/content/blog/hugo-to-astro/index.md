@@ -1,6 +1,7 @@
 ---
 title: "HugoからAstroへ移行した"
 date: 2025-10-15T04:18+09:00
+updatedDate : 2025-10-19T14:56+09:00
 description: "HugoからAstroへ移行したときのメモ"
 categories: [web]
 tags:
@@ -74,6 +75,8 @@ export const collections = { blog };
 
 Astro側のドキュメントが充実していたので特に問題なく移行できました．
 
+## おまけ
+
 ### 5. Tailwind CSSの設定
 
 [ここ](https://docs.astro.build/en/guides/styling/#tailwind)を参考に，Tailwind CSSを導入しました．
@@ -82,9 +85,71 @@ Astro側のドキュメントが充実していたので特に問題なく移行
 また，Markdownのスタイルにも影響が出てしまうため，`globals.css`でMarkdownに対して違うスタイルが適用されるようにしました．
 (具体的にはMarkdownの中身に対して`#article-content`で囲い，`globals.css`で`#article-content > p`などのように指定しました．)
 
-### 6. その他
 
-Tagsのページを追加したり，SEO対策を行ったりしました．
+### 6. タグ関連のページを追加
+
+公式のDocumentを参考にTagによる検索機能を設けました．
+
+[Tagページの生成](https://docs.astro.build/ja/tutorial/5-astro-api/2/)
+[Tagsページの生成](https://docs.astro.build/ja/tutorial/5-astro-api/3/)
+
+### 7. SEO対策
+
+`src/components/BaseHead.astro`にOGPなどのmetadataを追加しました．
+
+具体的には以下の部分が追加したもの．
+
+```astro
+
+<!-- Open Graph / Facebook -->
+<meta prefix="og: http://ogp.me/ns#" />
+<meta property="og:title" content={title} />
+<meta property="og:site_name" content={SITE_TITLE} />
+{
+	description ? <meta property="og:description" content={description} /> : null
+}
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:url" content={canonicalURL.toString()} />
+{
+	image? (
+		<meta
+			property="og:image"
+			content={new URL(image.src, Astro.site).toString()}
+		/>
+	) : (
+		<meta
+			property="og:image"
+			content={new URL(logo.src, Astro.site).toString()}
+		/>
+	)
+}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:url" content={canonicalURL.toString()} />
+{
+	image ? (
+		<meta
+			name="twitter:image"
+			content={new URL(image.src, Astro.site).toString()}
+		/>
+	) : (
+		<meta
+			name="twitter:image"
+			content={new URL(logo.src, Astro.site).toString()}
+		/>
+	)
+}
+<meta name="twitter:image:alt" content={image?.alt || SITE_TITLE} />
+<meta name="twitter:creator" content="@xsuz10074" />
+
+```
+
+### 8. コードブロックをちょっとよくする．
+
+コードブロックの上にファイル名を表示したくなり，改良を加えることにしました．
+色々さがしている中で[この方の記事](https://blog.mono0x.net/2025/02/08/astro-expressive-code/)を見つけて，expressive-codeを導入することにしました．
 
 ## 最終的にできたもの
 

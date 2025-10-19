@@ -5,6 +5,7 @@ date: 2025-10-16
 slug: segger-rtt_with_daplink
 tags: [debug, c++, rust, development, raspberrypi-pico, stm32]
 draft: true
+updatedDate: 2025-10-19
 ---
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=true} -->
@@ -175,3 +176,7 @@ monitor rtt server start 5555 0
 
 SEGGER RTTは本来JLinkデバッガ専用の仕組みですが，DAPLinkでも使うことができました．probe-rsやpyocdを使えば，DAPLink経由でSEGGER RTTのメッセージを読み取ることができます．
 かなり便利なので，DAPLinkを使っている人はぜひ試してみてください．
+
+## 追記(2025/10/19)
+
+VSCode上だとopenocd使うのが一番よさそう^[https://xsuz.github.io/blog/stm32-development-environment/]
