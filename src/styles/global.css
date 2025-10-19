@@ -34,9 +34,17 @@ h4 {
 h5 {
 	font-size: 1.25em;
 }
+h6 {
+	font-size: 1em;
+}
 
-p {
-	margin: 1em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 1em 0;
 }
 
 hr {
@@ -95,7 +103,7 @@ hr {
 	}
 
 	ul > li > ul {
-		@apply pl-4 py-1 my-0;
+		@apply py-1 my-0;
 	}
 
 	ol > li > ol {
@@ -109,7 +117,7 @@ hr {
 
 	/* image */
 	p > img {
-		@apply rounded-md lg:max-w-[75%] xl:max-w-[66.6666%] mx-auto m-12 xl:mt-12;
+		@apply rounded-md lg:max-w-[80%] xl:max-w-[75%] mx-auto m-12 xl:mt-12;
 	}
 
 	/* blockquote */
@@ -142,11 +150,11 @@ hr {
 		@apply text-sm lg:text-base xl:text-lg border px-1 py-[0.125rem] rounded-md;
 	}
 
-	.astro-code {
+	.expressive-code {
 		@apply my-8 xl:my-12 rounded-md overflow-x-auto p-[1em];
 	}
 
-	.astro-code span {
+	.expressive-code span {
 		@apply text-sm lg:text-base xl:text-lg;
 	}
 }

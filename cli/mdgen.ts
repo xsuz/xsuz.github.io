@@ -16,7 +16,7 @@ async function main() {
     const tags = await input({ message: "Tags (comma separated):" });
 
     if (!title || !description || !slug || !category) {
-        console.error("All fields are required.");
+        console.error("Title, description, slug, and category are required.");
         process.exit(1);
     }
 
