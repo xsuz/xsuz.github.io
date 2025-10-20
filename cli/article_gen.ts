@@ -11,7 +11,7 @@ async function main() {
     const slug = await input({ message: "Slug (lowercase, no spaces):" });
     const date = new Date().toISOString().split('T')[0];
     const filepath = `${rootpath}/${slug}/index.md`;
-    const categories = ['web','embedded','analysis','physics','other'];
+    const categories = ['web','embedded','analysis','math','physics','other'];
     const category = await select({ message: "Category:", choices: categories });
     const tags = await input({ message: "Tags (comma separated):" });
 

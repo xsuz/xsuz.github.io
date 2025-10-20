@@ -5,6 +5,7 @@ date: 2025-10-18
 slug: stm32-development-environment
 category: embedded
 tags: [stm32, development, vscode, cmake, debug, c++]
+heroImage: ./image-7.png
 draft: true
 ---
 

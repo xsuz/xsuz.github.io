@@ -5,6 +5,7 @@ date: 2025-10-16
 slug: segger-rtt_with_daplink
 tags: [debug, c++, rust, development, raspberrypi-pico, stm32]
 draft: true
+category: embedded
 updatedDate: 2025-10-19
 ---
 

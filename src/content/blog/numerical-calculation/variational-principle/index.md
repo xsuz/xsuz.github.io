@@ -7,7 +7,7 @@ tags:
     - physics
     - numerical-calculation
     - computer-science
-draft: false
+category: physics
 ---
 
 お久しぶりです。xsuzです。

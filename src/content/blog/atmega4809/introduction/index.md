@@ -7,6 +7,7 @@ tags:
     - avr
     - megaavr
     - arduino
+categories : embedded
 ---
 
 こんにちは！xsuzです。

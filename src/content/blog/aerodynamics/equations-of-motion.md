@@ -8,6 +8,7 @@ tags:
     - math
     - aerodynamics
     - control-theory
+categories : physics
 draft: false
 ---
 

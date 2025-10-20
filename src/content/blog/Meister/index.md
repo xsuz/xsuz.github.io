@@ -4,12 +4,18 @@ date: 2024-11-04T09:30:04+09:00
 description: 鳥人間サークルMeisterで製作したものの紹介
 tags:
     - 鳥人間
+category: other
+heroImage: img/TSUBAME.jpg
 draft: false
 ---
 
 バイトに応募するときに、鳥人間で製作したもの一覧をつくった。折角なので、ホームページにも載せようと思う。
 
 ---
+
+![Meister 玄鳥](img/TSUBAME.jpg)
+
+画像は2024年度の鳥人間コンテストに出場したMeisterの「玄鳥」である。機体設計，製作，運営など全てを学生が行う。私は電装班として，操縦系統，電装を担当した。
 
 ## 操縦系統
 

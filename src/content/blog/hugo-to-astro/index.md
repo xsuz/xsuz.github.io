@@ -3,7 +3,7 @@ title: "HugoからAstroへ移行した"
 date: 2025-10-15T04:18+09:00
 updatedDate : 2025-10-19T14:56+09:00
 description: "HugoからAstroへ移行したときのメモ"
-categories: [web]
+category: web
 tags:
     - astro
     - hugo

@@ -7,7 +7,7 @@ tags:
     - math
     - computer-science
     - python
-toc: true
+category: math
 ---
 
 明けましておめでとうございます。今年もよろしくお願いいたします。

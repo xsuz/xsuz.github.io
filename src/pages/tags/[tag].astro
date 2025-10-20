@@ -24,12 +24,23 @@ const { posts } = Astro.props;
 <Layout title=`#${tag}`>
   <div class="flex items-center">
     <h3 class="">Posts tagged with &nbsp;</h3>
-    <h3 class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">#{tag}</h3>
+    <h3
+      class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+    >
+      #{tag}
+    </h3>
   </div>
   <div class="grid md:grid-cols-2 gap-8 mt-12">
     {
       posts.map((post) => (
-        <Card title={post.data.title} date={post.data.date} updatedDate={post.data.updatedDate} id={post.id} tags={post.data.tags}/>
+        <Card
+          title={post.data.title}
+          date={post.data.date}
+          updatedDate={post.data.updatedDate}
+          heroImage={post.data.heroImage}
+          id={post.id}
+          tags={post.data.tags}
+        />
       ))
     }
   </div>

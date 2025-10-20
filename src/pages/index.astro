@@ -21,6 +21,8 @@ const sortedPosts = (await getCollection("blog"))
 					<Card
 						title={post.data.title}
 						date={post.data.date}
+						updatedDate={post.data.updatedDate}
+						heroImage={post.data.heroImage}
 						id={post.id}
 						tags={post.data.tags}
 					/>

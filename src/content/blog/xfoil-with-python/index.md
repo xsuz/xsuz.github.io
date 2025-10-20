@@ -8,7 +8,8 @@ tags:
     - xfoil
     - c++
     - 鳥人間
-draft: false
+heroImage: img/xfoil_logo.gif
+category: analysis
 ---
 
 こんにちは、xsuzです！

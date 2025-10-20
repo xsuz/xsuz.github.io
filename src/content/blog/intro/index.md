@@ -3,6 +3,7 @@ title: "はじめまして"
 date: 2022-09-17T21:39:09+09:00
 description: "自己紹介"
 tags: []
+categories: other
 draft: false
 ---
 

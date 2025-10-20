@@ -1,16 +1,17 @@
 ---
 import FormattedDate from "./FormattedDate.astro";
-import { ImageMetadata } from "astro:assets";
+import { Image, ImageMetadata } from "astro:assets";
 import "../styles/global.css";
 
 type Props = {
     title: string;
     date: Date;
     updatedDate?: Date;
+    heroImage?: ImageMetadata;
     id: string;
     tags?: [string];
 };
-const { title, date, updatedDate, id, tags } = Astro.props;
+const { title, date, updatedDate, id, tags, heroImage } = Astro.props;
 ---
 
 <div
@@ -40,4 +41,11 @@ const { title, date, updatedDate, id, tags } = Astro.props;
             ))
         }
     </div>
+    {heroImage && (
+        <Image
+            src={heroImage}
+            alt={`Hero image for ${title}`}
+            class="mt-4 rounded-lg"
+        />
+    )}
 </div>
