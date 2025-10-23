@@ -6,7 +6,7 @@
 		},
 		{
 			"name": "blog",
-			"path": "src/content/blog"
+			"path": "content/blog"
 		}
 	]
 }

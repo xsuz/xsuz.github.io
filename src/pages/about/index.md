@@ -1,5 +1,6 @@
 ---
 title: 自己紹介
+layout: ../../layouts/Markdown.astro
 ---
 
 ## 【自己紹介】

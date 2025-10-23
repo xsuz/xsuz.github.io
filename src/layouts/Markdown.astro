@@ -1,0 +1,11 @@
+---
+import Layout from './Base.astro';
+
+const { frontmatter } = Astro.props
+---
+
+<Layout title={frontmatter.title}>
+    <article id="article-content" class="prose dark:prose-invert max-w-none">
+        <slot />
+    </article>
+</Layout>

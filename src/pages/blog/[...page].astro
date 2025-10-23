@@ -1,7 +1,7 @@
 ---
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
 import Card from "../../components/Card.astro";
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/Base.astro";
 
 // getStaticPaths()で動的なルートを設定
 export async function getStaticPaths({ paginate }) {
