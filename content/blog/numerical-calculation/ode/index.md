@@ -25,13 +25,13 @@ category: math
 $$
  m l\ddot{\theta} = - mg\sin\theta
 $$
-　
+
 
 これは二階微分方程式ですが、解きやすくするために一階連立微分方程式に変換します。角振動数 $\omega=\dot{\theta}$を導入することにより、次の一階微分方程式に変換できます。
 $$
 \begin{cases}
-　\dot{\theta}=\omega \\
-　\dot{\omega}=-\frac{g\sin\theta}{l}
+\dot{\theta}=\omega \\
+\dot{\omega}=-\frac{g\sin\theta}{l}
 \end{cases}
 $$
 
@@ -266,7 +266,8 @@ m\ddot{y}=\lambda R_y-mg
 \end{cases}
 $$
 とかけました。ただし、ホロノミック制約より
-$$R(x,y)=(x^2+(y-l)^2)^\frac 1 2-l=0
+$$
+R(x,y)=(x^2+(y-l)^2)^\frac 1 2-l=0
 $$
 となるのでした。
 
@@ -396,4 +397,4 @@ $$
 
 ## 5. 参考文献
 
-* 機械システム学のための数値計算法　平井慎一
+* 機械システム学のための数値計算法 平井慎一
