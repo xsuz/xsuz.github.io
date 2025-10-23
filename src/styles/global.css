@@ -6,36 +6,73 @@
 
 @import "tailwindcss";
 
-
-@theme {
+.dark {
   --color-primary: #2979ff;
   --color-secondary: #fb8c00;
   --color-accent: #ff5252;
+  --color-primary-hover: #5393ff;
+  --color-secondary-hover: #ffb347;
+  --color-accent-hover: #ff6f6f;
+  --color-background: #121212;
+  --color-forground: #e0e0e0;
+  --color-button-background: #1e1e1e;
+  --color-button-forground: #e0e0e0;
+  --color-button-background-hover: #2a2a2a;
+}
+
+.light {
+  --color-primary: #2979ff;
+  --color-secondary: #fb8c00;
+  --color-accent: #ff5252;
+  --color-primary-hover: #5393ff;
+  --color-secondary-hover: #ffb347;
+  --color-accent-hover: #ff6f6f;
+  --color-background: #ffffff;
+  --color-forground: #121212;
+  --color-button-background: #f5f5f5;
+  --color-button-forground: #121212;
+  --color-button-background-hover: #e0e0e0;
+}
+
+
+@theme {
+  --color-background: var(--color-background);
+  --color-forground: var(--color-forground);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-secondary-hover: var(--color-secondary-hover);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-button-background: var(--color-button-background);
+  --color-button-forground: var(--color-button-forground);
+  --color-button-background-hover: var(--color-button-background-hover);
 }
 
 html,
 body {
 	scroll-behavior: smooth;
 	scroll-padding-top: 4em;
+	@apply bg-background text-forground;
 }
 
 h1 {
-	font-size: 3.052em;
+	@apply text-4xl md:text-5xl lg:text-6xl font-bold;
 }
 h2 {
-	font-size: 2.441em;
+	@apply text-3xl md:text-4xl lg:text-5xl font-bold;
 }
 h3 {
-	font-size: 1.953em;
+	@apply text-2xl md:text-3xl lg:text-4xl font-bold;
 }
 h4 {
-	font-size: 1.563em;
+	@apply text-xl md:text-2xl lg:text-3xl font-bold;
 }
 h5 {
-	font-size: 1.25em;
+	@apply text-lg md:text-xl lg:text-2xl font-bold;
 }
 h6 {
-	font-size: 1em;
+	@apply text-base md:text-lg lg:text-xl font-bold;
 }
 
 h1,
@@ -51,26 +88,6 @@ hr {
 	@apply my-8 xl:my-12 border-[0.5px];
 }
 
-@media (max-width: 720px) {
-	h1 {
-		font-size: 2.488em;
-	}
-	h2 {
-		font-size: 2.074em;
-	}
-	h3 {
-		font-size: 1.728em;
-	}
-	h4 {
-		font-size: 1.44em;
-	}
-	h5 {
-		font-size: 1.2em;
-	}
-	h6 {
-		font-size: 1em;
-	}
-}
 .katex-display {
 	overflow-x: auto;
 	overflow-y: hidden;

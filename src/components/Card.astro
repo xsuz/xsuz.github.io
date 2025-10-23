@@ -14,12 +14,13 @@ type Props = {
 const { title, date, updatedDate, id, tags, heroImage } = Astro.props;
 ---
 
-<div
-    class="block p-6 max-w-full bg-white rounded-lg border border-gray-200 shadow-md"
+<a
+    href={`/blog/${id}`} 
+    class="block p-6 max-w-full rounded-lg border border-primary shadow-md hover:scale-105 transition-transform duration-200"
 >
-    <a href={`/blog/${id}`} class="text-xl font-semibold mb-2 hover:underline">
+    <span class="text-xl font-semibold mb-2">
         <h5>{title}</h5>
-    </a>
+    </span>
 
     <div class="block md:flex text-sm text-gray-600">
         <FormattedDate date={date} />
@@ -35,17 +36,10 @@ const { title, date, updatedDate, id, tags, heroImage } = Astro.props;
     <div class="flex flex-wrap gap-2 mt-2">
         {
             tags?.map((tag) => (
-                <div class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                <div class="bg-button-background text-button-forground text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
                     #{tag}
                 </div>
             ))
         }
     </div>
-    {heroImage && (
-        <Image
-            src={heroImage}
-            alt={`Hero image for ${title}`}
-            class="mt-4 rounded-lg"
-        />
-    )}
-</div>
+</a>

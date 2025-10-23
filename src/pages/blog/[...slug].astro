@@ -30,26 +30,26 @@ import "katex/dist/katex.min.css";
 	image={post.data.heroImage}
 	description={post.data.description}
 >
-	<div class="mb-6 space-y-2">
+	<div class="">
 		<h2 class="font-bold">{post.data.title}</h2>
-		<div class="text-sm text-gray-600 grid grid-rows-2">
+		<div class="text-sm grid grid-rows-2">
 			<div class="flex flex-wrap gap-2 p-1">
 				{
 					post.data.tags?.map((tag) => (
 						<a
 							href={`/tags/${tag}`}
-							class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded hover:bg-gray-300"
+							class="bg-button-background text-button-forground text-xs font-semibold mr-2 px-2.5 py-0.5 rounded hover:bg-button-background-hover"
 						>
 							#{tag}
 						</a>
 					))
 				}
 			</div>
-			<div class="flex p-1 items-center text-sm text-gray-600">
+			<div class="flex p-1 items-center">
 				<FormattedDate date={post.data.date} />
 				{
 					post.data.updatedDate && (
-						<div class="text-gray-500 ml-3">
+						<div class="ml-3">
 							( Last updated on{" "}
 							<FormattedDate date={post.data.updatedDate} />)
 						</div>
@@ -73,10 +73,10 @@ import "katex/dist/katex.min.css";
 		data-category-id="DIC_kwDOKd9vXs4Cw25_"
 		data-mapping="pathname"
 		data-strict="0"
-		data-reactions-enabled="1"
-		data-emit-metadata="1"
+		data-reactions-enabled="0"
+		data-emit-metadata="0"
 		data-input-position="top"
-		data-theme="light_protanopia"
+        data-theme="preferred_color_scheme"
 		data-lang="ja"
 		crossorigin="anonymous"
 		async

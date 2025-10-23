@@ -16,7 +16,7 @@ export default defineConfig({
       wrap: false,
       preserveIndent: true,
     },
-    themes:['monokai', 'github-light']
+    themes:['github-dark', 'github-light']
   })],
 
   markdown: {

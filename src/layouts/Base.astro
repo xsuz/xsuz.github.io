@@ -24,11 +24,32 @@ const { title, image, description } = Astro.props;
 			image={image}
 			description={description}
 		/>
+		<script is:inline>
+			const applyTheme = () => {
+				if (
+					localStorage.getItem("theme") === "dark" ||
+					(!("theme" in localStorage) &&
+						window.matchMedia("(prefers-color-scheme: dark)")
+							.matches)
+				) {
+					document.documentElement.classList.add("dark");
+					document.documentElement.classList.remove("light");
+					console.log("dark mode");
+				} else {
+					document.documentElement.classList.remove("dark");
+					document.documentElement.classList.add("light");
+					console.log("light mode");
+				}
+			};
+
+			document.addEventListener("astro:after-swap", applyTheme);
+			applyTheme();
+		</script>
 	</head>
 
 	<body>
 		<Header />
-		<main class="mt-16 mb-8 max-w-[calc(100%-2em)] w-[960px] mx-auto px-6">
+		<main class="mb-8 max-w-[calc(100%-2em)] w-[960px] mx-auto px-6">
 			<div class="container mx-auto px-6 py-8">
 				<slot />
 			</div>
