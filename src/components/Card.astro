@@ -21,14 +21,14 @@ const { title, date, updatedDate, id, tags, heroImage } = Astro.props;
         <h5>{title}</h5>
     </a>
 
-    <div class="flex items-center text-sm text-gray-600">
+    <div class="block md:flex text-sm text-gray-600">
         <FormattedDate date={date} />
         {updatedDate && (
-            <>
-                <span class="mx-2">|</span>
-                <span>Updated: </span>
-                <FormattedDate date={updatedDate} />
-            </>
+            <br />
+            <span class="md:ml-3 text-gray-500">
+                ( Updated on&nbsp;
+                <FormattedDate date={updatedDate} /> )
+            </span>
         )}
     </div>
 

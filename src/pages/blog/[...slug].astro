@@ -33,7 +33,7 @@ import "katex/dist/katex.min.css";
 	<div class="mb-6 space-y-2">
 		<h2 class="font-bold">{post.data.title}</h2>
 		<div class="text-sm text-gray-600 grid grid-rows-2">
-			<div class="flex flex-wrap gap-2 mt-2">
+			<div class="flex flex-wrap gap-2 p-1">
 				{
 					post.data.tags?.map((tag) => (
 						<a
@@ -45,11 +45,11 @@ import "katex/dist/katex.min.css";
 					))
 				}
 			</div>
-			<div class="flex items-center gap-2">
+			<div class="flex p-1 items-center text-sm text-gray-600">
 				<FormattedDate date={post.data.date} />
 				{
 					post.data.updatedDate && (
-						<div class="last-updated-on">
+						<div class="text-gray-500 ml-3">
 							( Last updated on{" "}
 							<FormattedDate date={post.data.updatedDate} />)
 						</div>
@@ -57,7 +57,7 @@ import "katex/dist/katex.min.css";
 				}
 			</div>
 		</div>
-		<hr />
+		<hr class="my-4" />
 
 		<article id="article-content">
 			<Content />
@@ -76,7 +76,7 @@ import "katex/dist/katex.min.css";
 		data-reactions-enabled="1"
 		data-emit-metadata="1"
 		data-input-position="top"
-		data-theme="preferred_color_scheme"
+		data-theme="light_protanopia"
 		data-lang="ja"
 		crossorigin="anonymous"
 		async
