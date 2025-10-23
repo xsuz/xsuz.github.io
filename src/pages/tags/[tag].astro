@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Card from "../../components/Card.astro";
 import Layout from "../../layouts/Base.astro";
+import Icon from "../../components/Icon.astro";
 
 export async function getStaticPaths({}) {
   const all_posts = await getCollection("blog");
@@ -22,7 +23,9 @@ const { posts } = Astro.props;
 ---
 
 <Layout title=`#${tag}`>
-    <h1 class="">Posts tagged with #{tag}</h1>
+    <h1 class="">
+      <Icon name="tag" size="1em" />{tag}
+    </h1>
   <div class="grid md:grid-cols-2 gap-8 mt-12">
     {
       posts.map((post) => (

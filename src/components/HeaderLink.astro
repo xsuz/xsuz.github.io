@@ -12,8 +12,8 @@ const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
 
 <a href={href} class={
 	isActive
-		? `block rounded-md px-3 py-3 font-medium hover:bg-black/5 hover:text-white/100 bg-black/10  text-decoration-underline`
-		: `block rounded-md px-3 py-3 font-medium hover:bg-black/5 hover:text-white/100`
+		? `block rounded-md px-3 py-3 font-medium hover:bg-primary-hover hover:text-white/100 bg-black/10  text-decoration-underline`
+		: `block rounded-md px-3 py-3 font-medium hover:bg-primary-hover hover:text-white/100`
 	}>
 	<slot/>
 </a>

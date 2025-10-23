@@ -23,6 +23,7 @@ const nextPost = (await getCollection("blog"))
 	.sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())[0];
 
 import "katex/dist/katex.min.css";
+import Icon from "../../components/Icon.astro";
 ---
 
 <Layout
@@ -32,28 +33,28 @@ import "katex/dist/katex.min.css";
 >
 	<div class="">
 		<h2 class="font-bold">{post.data.title}</h2>
-		<div class="text-sm grid grid-rows-2">
-			<div class="flex flex-wrap gap-2 p-1">
-				{
-					post.data.tags?.map((tag) => (
-						<a
-							href={`/tags/${tag}`}
-							class="bg-button-background text-button-forground text-xs font-semibold mr-2 px-2.5 py-0.5 rounded hover:bg-button-background-hover"
-						>
-							#{tag}
-						</a>
-					))
-				}
-			</div>
-			<div class="flex p-1 items-center">
+		<div class="mb-3">
+			<div class="block text-lg text-gray-600 my-4">
+				<Icon name="calendar" size="1em" />
 				<FormattedDate date={post.data.date} />
 				{
 					post.data.updatedDate && (
-						<div class="ml-3">
-							( Last updated on{" "}
-							<FormattedDate date={post.data.updatedDate} />)
-						</div>
+						<span>
+							( Updated on&nbsp;
+							<FormattedDate date={post.data.updatedDate} /> )
+						</span>
 					)
+				}
+			</div>
+
+			<div class="flex flex-wrap gap-2">
+				{
+					post.data.tags?.map((tag) => (
+						<a href={`/tags/${tag}`} class="bg-button-background text-button-forground text-md font-semibold mr-2 px-2.5 py-0.5 rounded hover:bg-button-background-hover hover:scale-105 transition-transform">
+							<Icon name="tag" size="1em" />
+							{tag}
+						</a>
+					))
 				}
 			</div>
 		</div>
@@ -76,11 +77,10 @@ import "katex/dist/katex.min.css";
 		data-reactions-enabled="0"
 		data-emit-metadata="0"
 		data-input-position="top"
-        data-theme="preferred_color_scheme"
+		data-theme="preferred_color_scheme"
 		data-lang="ja"
 		crossorigin="anonymous"
-		async
-	></script>
+		async></script>
 
 	<hr class="my-4" />
 

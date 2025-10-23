@@ -1,0 +1,19 @@
+---
+import { IconData } from './IconData'
+
+interface Props {
+  size?: number | `${number}px` | `${number}rem` | `${number}em`
+  name: keyof typeof IconData
+}
+const { size , name } = Astro.props
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 -960 960 960"
+  {...(size ? { width: size, height: size } : {width: "1em", height: "1em"})}
+  stroke="currentColor"
+  fill="currentColor"
+>
+  <path d={IconData[name]}></path>
+</svg>

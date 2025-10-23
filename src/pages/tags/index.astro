@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Base.astro";
+import Icon from "../../components/Icon.astro";
 
 const all_posts = await getCollection("blog");
 type FrontmatterPost = (typeof all_posts)[number] & {
@@ -34,7 +35,7 @@ const tags = Array.from(
 							class="bg-button-background text-button-forground text-xs font-semibold mr-2 px-2.5 py-0.5 rounded hover:bg-button-background-hover"
 						>
 							<span class="text-lg font-bold">
-								#{tag}
+								<Icon name="tag"/>{tag}
 							</span>
 						</a>
 					);
