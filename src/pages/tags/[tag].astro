@@ -22,14 +22,7 @@ const { posts } = Astro.props;
 ---
 
 <Layout title=`#${tag}`>
-  <div class="flex items-center">
-    <h3 class="">Posts tagged with &nbsp;</h3>
-    <h3
-      class="bg-button-background text-button-forground text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
-    >
-      #{tag}
-    </h3>
-  </div>
+    <h1 class="">Posts tagged with #{tag}</h1>
   <div class="grid md:grid-cols-2 gap-8 mt-12">
     {
       posts.map((post) => (

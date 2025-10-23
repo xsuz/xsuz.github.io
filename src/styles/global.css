@@ -103,11 +103,11 @@ hr {
 
 	/* list */
 	ul {
-		@apply pl-[1.125rem] xl:pl-[1.25rem] list-outside list-disc my-4;
+		@apply pl-4.5 xl:pl-5 list-outside list-disc my-4;
 	}
 
 	ol {
-		@apply pl-[1.125rem] xl:pl-[1.25rem] list-outside list-decimal my-4;
+		@apply pl-4.5 xl:pl-5 list-outside list-decimal my-4;
 	}
 
 	ol > li::marker {
@@ -164,7 +164,7 @@ hr {
 
 	p > code,
 	li > code {
-		@apply text-sm lg:text-base xl:text-lg border px-1 py-[0.125rem] rounded-md;
+		@apply text-sm lg:text-base xl:text-lg border px-1 py-0.5 rounded-md;
 	}
 
 	.expressive-code {

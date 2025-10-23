@@ -8,7 +8,6 @@ const blog = defineCollection({
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
-			// Transform string to Date object
 			date: z.coerce.date(),
 			description: z.string().optional(),
 			updatedDate: z.coerce.date().optional(),

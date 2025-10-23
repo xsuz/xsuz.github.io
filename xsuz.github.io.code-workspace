@@ -8,5 +8,10 @@
 			"name": "blog",
 			"path": "content/blog"
 		}
-	]
+	],
+	"settings": {
+		"files.associations": {
+			"*.css" : "tailwindcss"
+		}
+	}
 }
