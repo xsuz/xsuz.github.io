@@ -140,7 +140,7 @@ svg {
 	}
 
 	/* image */
-	p > img {
+	img {
 		@apply rounded-md lg:max-w-[80%] xl:max-w-[75%] mx-auto m-12 xl:mt-12;
 	}
 
@@ -149,13 +149,22 @@ svg {
 		@apply block border-primary border-3 px-4 py-2 w-full h-fit my-8 xl:my-12 text-gray-500;
 	}
 
+	/* table */
+	table {
+		@apply w-full border-collapse my-8 xl:my-12;
+	}
+	th,
+	td {
+		@apply border border-forground px-4 py-2 text-left;
+	}
+
 	/* hr */
 	hr {
 		@apply my-8 xl:my-12 border-[0.5px];
 	}
 
 	/* iframe */
-	p > iframe {
+	iframe {
 		@apply w-full h-fit mx-auto aspect-video;
 	}
 
