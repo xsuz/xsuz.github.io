@@ -14,7 +14,7 @@ const sortedPosts = (await getCollection("blog"))
 		<p class="text-lg text-gray-600">Blog of me by me for me</p>
 	</section>
 	<section>
-		<h3>Recent Posts</h3>
+		<h1>Recent Posts</h1>
 		<div class="grid md:grid-cols-3 gap-8 mt-8">
 			{
 				sortedPosts.map((post) => (
