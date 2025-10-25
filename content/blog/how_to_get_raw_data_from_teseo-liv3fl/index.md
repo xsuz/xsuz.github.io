@@ -24,7 +24,6 @@ draft: true
 5. [やってみた結果](#やってみた結果)
 6. [今回使った回路](#今回使った回路)
 7. [まとめ](#まとめ)
-8. [参考文献](#参考文献)
 
 <!-- /code_chunk_output -->
 
@@ -211,7 +210,3 @@ Serial1.println("$PSTMSETPAR,1303,0.25*03");
 
 Teseo LIV3FLで搬送波位相を取得する方法を紹介しました．
 今後は，TESEO LIV3FLから得られたデータをRINEX形式に変換し，RTKLIBなどでRTK測位を試してみたいと思います．
-
-## 参考文献
-
-- ST Microelectronics, UM2229 (Teseo-LIV3FL GNSS Module - Software Manual), https://www.st.com/resource/en/user_manual/um2229-teseoliv3-gnss-module--software-manual-stmicroelectronics.pdf , 2025/10/24閲覧
