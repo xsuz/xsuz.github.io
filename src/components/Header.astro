@@ -3,7 +3,7 @@ import { SITE_TITLE } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
 import Icon from "./Icon.astro";
 import ThemeToggle from "./ThemeToggle.astro";
-import Avatar from "../assets/avatar.jpg";
+import Avatar from "../assets/avatar128x128.jpg";
 import { Image } from "astro:assets";
 ---
 
@@ -16,16 +16,15 @@ import { Image } from "astro:assets";
         <a href="/" class="flex items-center space-x-2">
           <Image
             src={Avatar}
-            alt="Avatar"
-            class="rounded-full"
-            width={32}
-            height={32}
+            alt="すずゆー"
+            class="object-cover rounded-full h-10 w-10"
+            format="webp"
+            loading="eager"
           />
         </a>
       </div>
 
-      <div class="flex sm:hidden flex-1 justify-center items-center">
-      </div>
+      <div class="flex sm:hidden flex-1 justify-center items-center"></div>
 
       <div class="block sm:hidden mx-4">
         <!-- Mobile menu button-->
@@ -36,7 +35,7 @@ import { Image } from "astro:assets";
         >
           <span class="sr-only">Open main menu</span>
           <!-- Heroicon name: outline/bars-3 -->
-          <Icon name="menu_open"/>
+          <Icon name="menu_open" />
         </button>
       </div>
 
