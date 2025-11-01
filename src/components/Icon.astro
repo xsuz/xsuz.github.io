@@ -4,8 +4,10 @@ import { IconData } from './IconData'
 interface Props {
   size?: number | `${number}px` | `${number}rem` | `${number}em`
   name: keyof typeof IconData
+  class?: string
+  style?:string
 }
-const { size , name } = Astro.props
+const { size , name , class: className = "" , style = "" } = Astro.props
 ---
 
 <svg
@@ -14,6 +16,8 @@ const { size , name } = Astro.props
   {...(size ? { width: size, height: size } : {width: "1em", height: "1em"})}
   stroke="currentColor"
   fill="currentColor"
+  style={style}
+  class={className}
 >
   <path d={IconData[name]}></path>
 </svg>

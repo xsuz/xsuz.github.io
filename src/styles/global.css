@@ -95,6 +95,24 @@ svg {
   transform: translateY(-4px);
 }
 
+
+/* ダークモード切替ボタン */
+html .darkicon {
+  @apply scale-0 absolute;
+}
+
+html .lighticon {
+  @apply scale-100 absolute;
+}
+
+html.dark .darkicon {
+  @apply scale-100 absolute;
+}
+
+html.dark .lighticon {
+  @apply scale-0 absolute;
+}
+
 .katex-display {
 	overflow-x: auto;
 	overflow-y: hidden;
