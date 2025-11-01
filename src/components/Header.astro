@@ -3,6 +3,8 @@ import { SITE_TITLE } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
 import Icon from "./Icon.astro";
 import ThemeToggle from "./ThemeToggle.astro";
+import Avatar from "../assets/avatar.jpg";
+import { Image } from "astro:assets";
 ---
 
 <nav
@@ -10,54 +12,51 @@ import ThemeToggle from "./ThemeToggle.astro";
 >
   <div class="mx-auto px-2 sm:px-6 lg:px-8">
     <div class="relative bg-primary flex h-16 items-center justify-between">
-      <div
-        class="absolute left-0 right-0 text-center py-2 font-medium sm:hidden"
-      >
-        <a href="/">
-          <span class="font-bold">{SITE_TITLE}</span>
+      <div class="block">
+        <a href="/" class="flex items-center space-x-2">
+          <Image
+            src={Avatar}
+            alt="Avatar"
+            class="rounded-full"
+            width={32}
+            height={32}
+          />
         </a>
       </div>
 
-      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+      <div class="flex sm:hidden flex-1 justify-center items-center">
+      </div>
+
+      <div class="block sm:hidden mx-4">
         <!-- Mobile menu button-->
         <button
           type="button"
           onclick="toggleDisclosure('mobile-menu')"
-          class="relative inline-flex items-center justify-center rounded-md p-2 focus:outline-2 focus:-outline-offset-1 focus:outline-accent"
+          class="items-center justify-center rounded-md p-2 focus:outline-2 focus:-outline-offset-1 focus:outline-white"
         >
-          <span class="absolute -inset-0.5"></span>
           <span class="sr-only">Open main menu</span>
           <!-- Heroicon name: outline/bars-3 -->
-          <div class="in-aria-expanded:hidden">
-            <Icon name="menu_open" size={"1em"} />
-          </div>
-          <!-- Heroicon name: outline/x-mark -->
-          <div class="not-in-aria-expanded:hidden">
-            <Icon name="menu_close" size={"1em"} />
-          </div>
+          <Icon name="menu_open"/>
         </button>
       </div>
-      <div
-        class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
-      >
-        <div class="hidden sm:ml-6 sm:block">
-          <div class="flex space-x-4">
-            <HeaderLink href="/">Home</HeaderLink>
-            <HeaderLink href="/blog">Blog</HeaderLink>
-            <HeaderLink href="/tags">Tags</HeaderLink>
-            <HeaderLink href="/about">About</HeaderLink>
-          </div>
+
+      <!-- Desktop navigation -->
+      <div class="hidden sm:ml-6 sm:block">
+        <div class="flex space-x-4">
+          <HeaderLink href="/">Home</HeaderLink>
+          <HeaderLink href="/blog">Blog</HeaderLink>
+          <HeaderLink href="/tags">Tags</HeaderLink>
+          <HeaderLink href="/about">About</HeaderLink>
         </div>
       </div>
 
-      <div
-        class="block inset-y-0 right-0 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
-      >
-        <!-- Theme toggle -->
+      <div class="block m-4">
         <ThemeToggle />
       </div>
     </div>
   </div>
+
+  <!-- Mobile navigation -->
   <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
     <div class="space-y-1 px-2 pt-2 pb-3">
       <HeaderLink href="/">Home</HeaderLink>
@@ -74,10 +73,8 @@ import ThemeToggle from "./ThemeToggle.astro";
     const expanded = menu.hasAttribute("hidden") ? "false" : "true";
     if (expanded === "false") {
       menu.removeAttribute("hidden");
-      this.setAttribute("aria-expanded", "true");
     } else {
       menu.setAttribute("hidden", "");
-      this.setAttribute("aria-expanded", "false");
     }
   }
 </script>

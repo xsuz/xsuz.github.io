@@ -98,19 +98,19 @@ svg {
 
 /* ダークモード切替ボタン */
 html .darkicon {
-  @apply scale-0 absolute;
+  @apply size-[1em];
 }
 
 html .lighticon {
-  @apply scale-100 absolute;
+  @apply size-[0em];
 }
 
 html.dark .darkicon {
-  @apply scale-100 absolute;
+  @apply size-[0em];
 }
 
 html.dark .lighticon {
-  @apply scale-0 absolute;
+  @apply size-[1em];
 }
 
 .katex-display {

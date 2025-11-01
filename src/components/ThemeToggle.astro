@@ -4,19 +4,17 @@ import Icon from "./Icon.astro";
 
 <button
     id="theme-toggle"
-    class="h-9 w-9"
+    type="button"
+    class="items-center"
     onclick="toggleTheme()"
-    transition:persist
 >
     <Icon
         name="dark"
-        class="darkicon transition-all"
-        size={"1.2em"}
+        class="darkicon inline-block transition-all"
     />
     <Icon
         name="light"
-        class="lighticon transition-all"
-        size={"1.2em"}
+        class="lighticon inline-block transition-all"
     />
 </button>
 
