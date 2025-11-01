@@ -23,7 +23,7 @@ const { title, date, updatedDate, id, tags, heroImage } = Astro.props;
         {title}
     </span>
 
-    <div class="block text-lg text-gray-600 my-2">
+    <div class="block text-lg text-inactive-foreground my-2">
         <Icon name="calendar" size="1em" />
         <FormattedDate date={date} />
         {updatedDate && (
@@ -37,7 +37,7 @@ const { title, date, updatedDate, id, tags, heroImage } = Astro.props;
     <div class="flex flex-wrap gap-2 mt-3">
         {
             tags?.map((tag) => (
-                <div class="bg-button-background text-button-forground text-md font-semibold mr-2 px-2.5 py-0.5 rounded">
+                <div class="bg-inactive-background text-inactive-foreground text-md font-semibold mr-2 px-2.5 py-0.5 rounded">
                     <Icon name="tag" size="1em" />{tag}
                 </div>
             ))

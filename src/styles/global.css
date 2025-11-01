@@ -14,46 +14,46 @@
   --color-secondary-hover: #ffb347;
   --color-accent-hover: #ff6f6f;
   --color-background: #121212;
-  --color-forground: #e0e0e0;
-  --color-button-background: #1e1e1e;
-  --color-button-forground: #e0e0e0;
-  --color-button-background-hover: #2a2a2a;
+  --color-foreground: #e0e0e0;
+  --color-inactive-background: #2e2e2e;
+  --color-inactive-foreground: #a0a0a0;
+  --color-inactive-background-hover: #2a2a2a;
 }
 
 .light {
-  --color-primary: #2979ff;
+  --color-primary: #0239D6;
   --color-secondary: #fb8c00;
   --color-accent: #ff5252;
   --color-primary-hover: #5393ff;
   --color-secondary-hover: #ffb347;
   --color-accent-hover: #ff6f6f;
   --color-background: #ffffff;
-  --color-forground: #121212;
-  --color-button-background: #f5f5f5;
-  --color-button-forground: #121212;
-  --color-button-background-hover: #e0e0e0;
+  --color-foreground: #121212;
+  --color-inactive-background: #f5f5f5;
+  --color-inactive-foreground: #121212;
+  --color-inactive-background-hover: #e0e0e0;
 }
 
 
 @theme {
   --color-background: var(--color-background);
-  --color-forground: var(--color-forground);
+  --color-foreground: var(--color-foreground);
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
   --color-accent: var(--color-accent);
   --color-primary-hover: var(--color-primary-hover);
   --color-secondary-hover: var(--color-secondary-hover);
   --color-accent-hover: var(--color-accent-hover);
-  --color-button-background: var(--color-button-background);
-  --color-button-forground: var(--color-button-forground);
-  --color-button-background-hover: var(--color-button-background-hover);
+  --color-inactive-background: var(--color-inactive-background);
+  --color-inactive-foreground: var(--color-inactive-foreground);
+  --color-inactive-background-hover: var(--color-inactive-background-hover);
 }
 
 html,
 body {
 	scroll-behavior: smooth;
 	scroll-padding-top: 4em;
-	@apply bg-background text-forground;
+	@apply bg-background text-foreground;
 }
 
 h1 {
@@ -164,7 +164,7 @@ html.dark .lighticon {
 
 	/* blockquote */
 	blockquote {
-		@apply block border-primary border-3 px-4 py-2 w-full h-fit my-8 xl:my-12 text-gray-500;
+		@apply block border-primary border-3 px-4 py-2 w-full h-fit my-8 xl:my-12 text-inactive-foreground rounded-md;
 	}
 
 	/* table */
@@ -173,7 +173,7 @@ html.dark .lighticon {
 	}
 	th,
 	td {
-		@apply border border-forground px-4 py-2 text-left;
+		@apply border border-foreground px-4 py-2 text-left;
 	}
 
 	/* hr */

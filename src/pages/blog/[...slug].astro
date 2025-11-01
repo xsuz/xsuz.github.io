@@ -34,7 +34,7 @@ import Icon from "../../components/Icon.astro";
 	<div class="">
 		<h2 class="font-bold">{post.data.title}</h2>
 		<div class="mb-3">
-			<div class="block text-lg text-gray-600 my-4">
+			<div class="block text-lg text-inactive-foreground my-4">
 				<Icon name="calendar" size="1em" />
 				<FormattedDate date={post.data.date} />
 				{
@@ -50,7 +50,7 @@ import Icon from "../../components/Icon.astro";
 			<div class="flex flex-wrap gap-2">
 				{
 					post.data.tags?.map((tag) => (
-						<a href={`/tags/${tag}`} class="bg-button-background text-button-forground text-md font-semibold mr-2 px-2.5 py-0.5 rounded hover:bg-button-background-hover hover:scale-105 transition-transform">
+						<a href={`/tags/${tag}`} class="bg-inactive-background text-inactive-foreground text-md font-semibold mr-2 px-2.5 py-0.5 rounded hover:bg-inactive-background-hover hover:scale-105 transition-transform">
 							<Icon name="tag" size="1em" />
 							{tag}
 						</a>
