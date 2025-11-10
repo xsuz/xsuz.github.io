@@ -1,7 +1,7 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
-import FormattedDate from "../components/FormattedDate.astro";
-import Layout from "../layouts/Base.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Layout from "../../layouts/Base.astro";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
@@ -23,7 +23,7 @@ const nextPost = (await getCollection("blog"))
 	.sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())[0];
 
 import "katex/dist/katex.min.css";
-import Icon from "../components/Icon.astro";
+import Icon from "../../components/Icon.astro";
 ---
 
 <Layout
@@ -31,9 +31,6 @@ import Icon from "../components/Icon.astro";
 	image={post.data.heroImage}
 	description={post.data.description}
 >
-	<script is:inline define:vars={{ post }}>
-		history.replaceState("","",`/blog/${post.id}`);
-	</script>
 	<div class="">
 		<h2 class="font-bold">{post.data.title}</h2>
 		<div class="mb-3">
@@ -53,7 +50,10 @@ import Icon from "../components/Icon.astro";
 			<div class="flex flex-wrap gap-2">
 				{
 					post.data.tags?.map((tag) => (
-						<a href={`/tags/${tag}`} class="bg-inactive-background text-inactive-foreground text-md font-semibold mr-2 px-2.5 py-0.5 rounded hover:bg-inactive-background-hover hover:scale-105 transition-transform">
+						<a
+							href={`/tags/${tag}`}
+							class="bg-inactive-background text-inactive-foreground text-md font-semibold mr-2 px-2.5 py-0.5 rounded hover:bg-inactive-background-hover hover:scale-105 transition-transform"
+						>
 							<Icon name="tag" size="1em" />
 							{tag}
 						</a>
@@ -90,20 +90,14 @@ import Icon from "../components/Icon.astro";
 	<nav class="grid justify-between grid-cols-1 md:grid-cols-2 gap-4">
 		{
 			prevPost && (
-				<a
-					href={`/blog/${prevPost.id}/`}
-					class="text-left hover:underline"
-				>
+				<a href={`/blog/${prevPost.id}/`} class="text-left hover:underline">
 					← {prevPost.data.title}
 				</a>
 			)
 		}
 		{
 			nextPost && (
-				<a
-					href={`/blog/${nextPost.id}/`}
-					class="text-right hover:underline"
-				>
+				<a href={`/blog/${nextPost.id}/`} class="text-right hover:underline">
 					{nextPost.data.title} →
 				</a>
 			)
