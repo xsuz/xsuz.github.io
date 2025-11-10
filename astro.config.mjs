@@ -11,6 +11,9 @@ import expressiveCode from 'astro-expressive-code';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://xsuz.github.io',
+  redirects: {
+    '/[slug]/': '/blog/[slug]/',
+  },
   integrations: [sitemap(), expressiveCode({
     defaultProps: {
       wrap: false,
