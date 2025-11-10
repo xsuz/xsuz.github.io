@@ -1,7 +1,7 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
-import Layout from "../../layouts/Base.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import Layout from "../layouts/Base.astro";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
@@ -23,7 +23,7 @@ const nextPost = (await getCollection("blog"))
 	.sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())[0];
 
 import "katex/dist/katex.min.css";
-import Icon from "../../components/Icon.astro";
+import Icon from "../components/Icon.astro";
 ---
 
 <Layout
@@ -88,7 +88,7 @@ import Icon from "../../components/Icon.astro";
 		{
 			prevPost && (
 				<a
-					href={`/blog/${prevPost.id}/`}
+					href={`/${prevPost.id}/`}
 					class="text-left hover:underline"
 				>
 					← {prevPost.data.title}
@@ -98,7 +98,7 @@ import Icon from "../../components/Icon.astro";
 		{
 			nextPost && (
 				<a
-					href={`/blog/${nextPost.id}/`}
+					href={`/${nextPost.id}/`}
 					class="text-right hover:underline"
 				>
 					{nextPost.data.title} →

@@ -182,4 +182,4 @@ SEGGER RTTは本来JLinkデバッガ専用の仕組みですが，DAPLinkでも�
 
 VSCode上だとopenocd使うのが一番よさそう[^1]
 
-[^1]:https://xsuz.github.io/blog/stm32-development-environment/
+[^1]:[僕が考えた最強のSTM32開発環境構築 (Windows)](../stm32-development-environment/)
