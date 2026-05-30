@@ -3,7 +3,7 @@
 import { readdirSync, existsSync, lstatSync, readFileSync, writeFileSync } from "fs";
 import {select, confirm} from '@inquirer/prompts';
 
-const rootpath = "./content/blog/";
+const rootpath = "./content";
 
 async function main() {
     const slug = await select({ 

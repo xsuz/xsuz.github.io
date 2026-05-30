@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "config:recommended"
+  ],
+  "timezone": "Asia/Tokyo",
+  "schedule": ["at any time"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "non-major dependencies",
+      "automerge": false
+    }
+  ],
+  "labels": ["dependencies"]
+}

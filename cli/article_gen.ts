@@ -3,7 +3,7 @@
 import {existsSync,mkdirSync,writeFileSync} from "fs";
 import { input, select, confirm} from '@inquirer/prompts';
 
-const rootpath = "./content/blog";
+const rootpath = "./content";
 
 async function main() {
     const title = await input({ message: "Title:" });

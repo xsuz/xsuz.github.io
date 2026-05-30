@@ -116,7 +116,7 @@ I)の過程を逆に辿ることにより示すことができる。
 
 > **ハミルトンの原理 (Hamilton's principle)**
 > 
-> 時刻$t\in [t_1,t_2]$で始点と終点が決められた失点系の軌道$\{\mathbf r_i(t)\}$の中で、端点で０となる任意の仮想変分$\{\delta \mathbf r_i(t)\}$に対して、作用積分が
+> 時刻$t\in [t_1,t_2]$で始点と終点が決められた質点系の軌道$\{\mathbf r_i(t)\}$の中で、端点で０となる任意の仮想変分$\{\delta \mathbf r_i(t)\}$に対して、作用積分が
 > $$
 > \delta I[\mathbf r]=\delta\left(\int_{t_1}^{t_2}{(T-U)dt}\right)=0
 > $$
